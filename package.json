@@ -1,0 +1,27 @@
+{
+  "name": "ehliang.com",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehliang/ehliang.com.git"
+  },
+  "author": "Ethan H. Liang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ehliang/ehliang.com/issues"
+  },
+  "homepage": "https://github.com/ehliang/ehliang.com#readme",
+  "devDependencies": {
+    "babel-core": "^6.8.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "webpack": "^1.13.0"
+  }
+}
