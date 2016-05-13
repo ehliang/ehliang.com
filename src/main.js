@@ -22,7 +22,7 @@ var Main = React.createClass({
 				<IntroScreen/>
 				<div className="blurBack">
 
-				<PortfolioSquare/>
+				<Content/>
 
 				</div>
 				</div>
@@ -31,11 +31,81 @@ var Main = React.createClass({
 		else
 		{
 			return (
-				<PortfolioSquare/>
-				);
+				<Content/>			
+					);
 		}
 	}
 }); 
+
+
+var Content = React.createClass({
+	render:function(){
+		return (
+		<div>
+
+
+		<nav className="navbar navbar-dark">
+		  <a className="navbar-brand" href="#">Ethan Liang</a>
+		  <ul className="nav navbar-nav">
+		    <li className="nav-item active">
+		      <a className="nav-link" href="#">About Me<span className="sr-only">(current)</span></a>
+		    </li>
+		    <li className="nav-item">
+		      <a className="nav-link" href="#">Projects</a>
+		    </li>
+		    <li className="nav-item">
+		      <a className="nav-link" href="#">Resume</a>
+		    </li>
+		    <li className="nav-item">
+		      <a className="nav-link" href="#">Contact Me</a>
+		    </li>
+		  </ul>
+		</nav>
+
+
+	<header>
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-12">
+                		<h1> About Me</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <Portfolio/> 
+
+
+
+    </div>
+
+
+			);
+	}
+
+});
+
+
+
+
+// var Portfolio = React.createClass({
+// 	getInitialState: function() { 
+// 		return {items: ['abc', 'def', 'ghi']};
+// 	}, 
+
+// 	handleClick: function(index) {
+
+// 	}, 
+
+// 	render:function(){
+// 		return 
+// 	}
+
+// });
+
+
 
 
 var PortfolioSquare = React.createClass({ 
