@@ -1,7 +1,7 @@
 {"projects": 
 
 {"hackathons":[
-	{"position": 0, "projectName": "dCharged", "hackathon": "NordicIOT Hackathon (2016)", "location":"Mälmo, Sweden", "time": "30h", "description": "Patients", "builtWith":"nodeJs, Java, reactJs", "image": "./abc", "link": "devpost"},
+	{"position": 0, "projectName": "dCharged", "hackathon": "NordicIOT Hackathon (2016)", "location":"Mälmo, Sweden", "time": "30h", "description": "Patientseeee fejfie jeoijfo ijeiofjoie jgoierj oigejoi gjeroig jeoirjg ioerjgo ierjgoij eroigjer iogjeorij goierjgoierjn", "builtWith":"nodeJs, Java, reactJs", "image": "./abc", "link": "devpost"},
 	{"position": 1, "projectName": "Traveller Information Network", "hackathon": "MHacks: Refactor (2016)", "location":"University of Michigan, Ann Arbor", "time": "48h", "description": "Travellers", "builtWith":"nodeJs, Android, Firebase", "image": "./abc", "link": "devpost"},
 	{"position": 2, "projectName": "XpressCart", "hackathon": "PennApps XIII (2016)", "location":"University of Pennsylvania, Pennsylvania", "time": "36h", "description": "Shopping", "builtWith":"Android, arduino", "image": "./abc", "link": "devpost"},
 	{"position": 0, "projectName": "dCharged", "hackathon": "NordicIOT Hackathon", "location":"Mälmo, Sweden", "time": "30h", "description": "Patients", "builtWith":"nodeJs, Java, reactJs", "image": "./abc", "link": "devpost"},

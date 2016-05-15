@@ -120,12 +120,12 @@ var IntroScreen = React.createClass({
 
 var Portfolio = React.createClass({
 	getInitialState: function() { 
-		return {description: "Click on any project to learn more"};
+		return {description: "Click on any project to learn more", initialClick:true};
 	}, 
 
 	handleClick: function(data) {
-		this.setState({description: data.projectName});
-
+		this.setState({initialClick:false});
+		this.setState({description: data});
 
 	}, 
 
@@ -151,6 +151,24 @@ var Portfolio = React.createClass({
 		var hacks = json.projects.hackathons; 
 		var hackProjects = this.splitRows(hacks); 
 
+		var project = this.state.description; 
+
+		var infoText = this.state.initialClick ? this.state.description : 
+
+		<div className="row">
+
+			<div>Project Name: {project.projectName}</div>
+			<div>Hackathon: {project.hackathon}</div>
+			<div>Hours: {project.time}</div> 
+			<div>Location: {project.location}</div>
+			<div>About: {project.description}</div>
+
+		</div>
+
+
+
+		;
+
 		return (
 			<section> 
 			<div className="row">
@@ -158,12 +176,17 @@ var Portfolio = React.createClass({
 				Projects
 				{hackProjects.map(function(hacks, i){
 
-						return(<div className="row" key={i}><PortfolioSquare data={hacks[0]} onClick={this.handleClick.bind(this, hacks[0])}/><PortfolioSquare data={hacks[1]} onClick={this.handleClick.bind(this, hacks[1])}/><PortfolioSquare data={hacks[2]} onClick={this.handleClick.bind(this, hacks[2])}/></div>);
+						return(<div className="row" key={i}>
+							<PortfolioSquare data={hacks[0]} onClick={this.handleClick.bind(this, hacks[0])}/>
+							<PortfolioSquare data={hacks[1]} onClick={this.handleClick.bind(this, hacks[1])}/>
+							<PortfolioSquare data={hacks[2]} onClick={this.handleClick.bind(this, hacks[2])}/>
+							</div>);
 				}, this)}
 
 				</div> 
 				<div className="col-md-4">
-				{this.state.description}
+
+				{infoText}
 				</div>
 				</div>
 			</section> 
@@ -219,7 +242,8 @@ var Contact = React.createClass({
 	render: function()
 	{
 		return (
-			<section>
+			<section className="contact">
+			<h1>Contact Me</h1>
 			<form>
 			  <Recaptcha
     			sitekey="6LcA8h8TAAAAAMf3AZfSM7aHZzCTBbg7Jx18wy8b"
