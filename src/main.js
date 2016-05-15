@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDom = require('react-dom');
 require('../build/main.css');
 var json = require('json!./projects.json');
+var Recaptcha = require('react-recaptcha');
 
 
 
@@ -81,7 +82,7 @@ var Content = React.createClass({
 
     <Resume/>
 
-
+    <Contact/>
 
     </div>
 
@@ -92,6 +93,29 @@ var Content = React.createClass({
 });
 
 
+var IntroScreen = React.createClass({
+	render: function(){
+		return (
+
+			<div className="introFloat">
+
+				<img className="profilePic" src="/img/globe.png"/>
+				<h1 className="introFloatTitle">Hey, I'm Ethan Liang.</h1>
+				<h3 className="introFloatTitle">Developer, Designer, Entrepreneur.</h3>
+				<h5 className="introFloatTitle">Check me out on </h5>
+
+				<a className="introFloatTitle" href="https://github.com/ehliang">GitHub</a> 
+				<h5 className="introFloatTitle"> and </h5>
+				<a className="introFloatTitle" href="https://www.linkedin.com/in/ehliang">LinkedIn.</a> 
+
+			</div> 
+
+
+			); 
+	}
+
+}); 
+
 
 
 var Portfolio = React.createClass({
@@ -100,7 +124,8 @@ var Portfolio = React.createClass({
 	}, 
 
 	handleClick: function(data) {
-		console.log(data.projectName);
+		this.setState({description: data.projectName});
+
 
 	}, 
 
@@ -133,7 +158,7 @@ var Portfolio = React.createClass({
 				Projects
 				{hackProjects.map(function(hacks, i){
 
-						return(<div className="row"><PortfolioSquare data={hacks[0]} onClick={this.handleClick.bind(this, hacks[0])}/><PortfolioSquare data={hacks[1]} onClick={this.handleClick.bind(this, hacks[1])}/><PortfolioSquare data={hacks[2]} onClick={this.handleClick.bind(this, hacks[2])}/></div>);
+						return(<div className="row" key={i}><PortfolioSquare data={hacks[0]} onClick={this.handleClick.bind(this, hacks[0])}/><PortfolioSquare data={hacks[1]} onClick={this.handleClick.bind(this, hacks[1])}/><PortfolioSquare data={hacks[2]} onClick={this.handleClick.bind(this, hacks[2])}/></div>);
 				}, this)}
 
 				</div> 
@@ -165,9 +190,12 @@ var PortfolioSquare = React.createClass({
 var Resume = React.createClass({ 
 	render: function(){
 		return (
-			<section> 
+			<section className="resume"> 
 			<div className="container">
-			<p>Resume</p>
+			<h1>Resume</h1>
+			<a href="https://github.com/ehliang/resume/raw/master/Resume.pdf">
+			<img src="./img/download.png"/>
+			</a>
 			</div>
 			</section> 
 
@@ -177,30 +205,39 @@ var Resume = React.createClass({
 });
 
 
+var Contact = React.createClass({
+	verifyCallback:function(response){
+		console.log(response);
+	},
+	callback:function(){
+		console.log("ayyy");
+	},
+	expiredCallback:function(){
+		console.log('expired');
+	},
 
-
-var IntroScreen = React.createClass({
-	render: function(){
+	render: function()
+	{
 		return (
-
-			<div className="introFloat">
-
-				<img className="profilePic" src="/img/globe.png"/>
-				<h1 className="introFloatTitle">Hey, I'm Ethan Liang.</h1>
-				<h3 className="introFloatTitle">Developer, Designer, Entrepreneur.</h3>
-				<h5 className="introFloatTitle">Check me out on </h5>
-
-				<a className="introFloatTitle" href="https://github.com/ehliang">GitHub</a> 
-				<h5 className="introFloatTitle"> and </h5>
-				<a className="introFloatTitle" href="https://www.linkedin.com/in/ehliang">LinkedIn.</a> 
-
-			</div> 
-
-
-			); 
+			<section>
+			<form>
+			  <Recaptcha
+    			sitekey="6LcA8h8TAAAAAMf3AZfSM7aHZzCTBbg7Jx18wy8b"
+          		size="compact"
+          		render="explicit"
+          		verifyCallback={this.verifyCallback}
+          		onloadCallback={this.callback}
+          		expiredCallback={this.expiredCallback}
+  			/>
+			<br/>
+      		<input type="submit" value="Submit"/>
+			</form>
+			</section>
+			);
 	}
+});
 
-}); 
+
 
 ReactDom.render(
 	<Main/>, 
