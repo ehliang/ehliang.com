@@ -1,6 +1,8 @@
 var React = require('react');
 var ReactDom = require('react-dom');
 require('../build/main.css');
+var json = require('json!./projects.json');
+
 
 
 var Main = React.createClass({
@@ -77,6 +79,8 @@ var Content = React.createClass({
 
     <Portfolio/> 
 
+    <Resume/>
+
 
 
     </div>
@@ -90,20 +94,59 @@ var Content = React.createClass({
 
 
 
-// var Portfolio = React.createClass({
-// 	getInitialState: function() { 
-// 		return {items: ['abc', 'def', 'ghi']};
-// 	}, 
+var Portfolio = React.createClass({
+	getInitialState: function() { 
+		return {description: "Click on any project to learn more"};
+	}, 
 
-// 	handleClick: function(index) {
+	handleClick: function(data) {
+		console.log(data.projectName);
 
-// 	}, 
+	}, 
 
-// 	render:function(){
-// 		return 
-// 	}
+	splitRows: function(inputJson){
+		var rowCol = []; 
 
-// });
+			inputJson.forEach(function(project, i){
+				var row = Math.floor(i/3),
+					col = i%3; 
+
+				if(!rowCol[row])
+				{
+					rowCol[row] = [];
+				}
+				rowCol[row][col] = project;
+
+			}); 
+			return rowCol;
+
+	},
+
+	render:function(){
+		var hacks = json.projects.hackathons; 
+		var hackProjects = this.splitRows(hacks); 
+
+		return (
+			<section> 
+			<div className="row">
+				<div className="col-md-8">
+				Projects
+				{hackProjects.map(function(hacks, i){
+
+						return(<div className="row"><PortfolioSquare data={hacks[0]} onClick={this.handleClick.bind(this, hacks[0])}/><PortfolioSquare data={hacks[1]} onClick={this.handleClick.bind(this, hacks[1])}/><PortfolioSquare data={hacks[2]} onClick={this.handleClick.bind(this, hacks[2])}/></div>);
+				}, this)}
+
+				</div> 
+				<div className="col-md-4">
+				{this.state.description}
+				</div>
+				</div>
+			</section> 
+
+			); 
+	}
+
+});
 
 
 
@@ -111,16 +154,27 @@ var Content = React.createClass({
 var PortfolioSquare = React.createClass({ 
 	render: function(){
 		return (
-			<div className="abcd">
-				AYYY LMAO
+			<div className="col-md-4" onClick={this.props.onClick}> 
+				{this.props.data.projectName} 
 			</div> 
-
-
 		); 
 	}
 
 });
 
+var Resume = React.createClass({ 
+	render: function(){
+		return (
+			<section> 
+			<div className="container">
+			<p>Resume</p>
+			</div>
+			</section> 
+
+			);
+	}
+
+});
 
 
 
