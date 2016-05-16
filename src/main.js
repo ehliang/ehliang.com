@@ -5,7 +5,6 @@ var json = require('json!./projects.json');
 var Recaptcha = require('react-recaptcha');
 
 
-
 var Main = React.createClass({
 		getInitialState: function() {
 			return {continueState: true}; 
@@ -99,13 +98,13 @@ var IntroScreen = React.createClass({
 
 			<div className="introFloat">
 
-				<img className="profilePic" src="/img/globe.png"/>
+				<img className="profilePic" src="src/img/globe.png"/>
 				<h1 className="introFloatTitle">Hey, I'm Ethan Liang.</h1>
 				<h3 className="introFloatTitle">Developer, Designer, Entrepreneur.</h3>
-				<h5 className="introFloatTitle">Check me out on </h5>
+				<h5 className="introFloatTitles">Check me out on </h5>
 
 				<a className="introFloatTitle" href="https://github.com/ehliang">GitHub</a> 
-				<h5 className="introFloatTitle"> and </h5>
+				<h5 className="introFloatTitles"> and </h5>
 				<a className="introFloatTitle" href="https://www.linkedin.com/in/ehliang">LinkedIn.</a> 
 
 			</div> 
@@ -120,7 +119,7 @@ var IntroScreen = React.createClass({
 
 var Portfolio = React.createClass({
 	getInitialState: function() { 
-		return {description: "Click on any project to learn more", initialClick:true, hack:true};
+		return {description: "Click on any project to learn more.", initialClick:true, hack:true};
 	}, 
 
 	handleClick: function(data, hack) {
@@ -186,20 +185,19 @@ var Portfolio = React.createClass({
 				{hackProjects.map(function(hacks, i){
 
 						return(<div className="row" key={i}>
-							<PortfolioSquare data={hacks[0]} onClick={this.handleClick.bind(this, hacks[0], true)}/>
-							<PortfolioSquare data={hacks[1]} onClick={this.handleClick.bind(this, hacks[1], true)}/>
-							<PortfolioSquare data={hacks[2]} onClick={this.handleClick.bind(this, hacks[2], true)}/>
+							{hacks.map(function(proj,j){
+								return (<PortfolioSquare data={proj} onClick={this.handleClick.bind(this, proj, true)}/>);
+							}, this)}
 							</div>);
 				}, this)}
 
 				<h3>Personal</h3>
 				{personalProjects.map(function(personal,i){
 						return(<div className="row" key={i}>
-							<PortfolioSquare data={personal[0]} onClick={this.handleClick.bind(this, personal[0], false)}/>
-							<PortfolioSquare data={personal[1]} onClick={this.handleClick.bind(this, personal[1], false)}/>
-							<PortfolioSquare data={personal[2]} onClick={this.handleClick.bind(this, personal[2], false)}/>
+							{personal.map(function(proj,j){
+								return (<PortfolioSquare data={proj} onClick={this.handleClick.bind(this, proj, false)}/>);
+							}, this)}
 							</div>);
-
 				}, this)}
 
 				</div> 
@@ -255,7 +253,7 @@ var Resume = React.createClass({
 			<div className="container">
 			<h1>Resume</h1>
 			<a href="https://github.com/ehliang/resume/raw/master/Resume.pdf">
-			<img className="center-block downloadIcon" src="./img/download.png"/>
+			<img className="center-block downloadIcon" src="src/img/download.png"/>
 			</a>
 				<h3 className="download">Download</h3>
 			</div>

@@ -27,7 +27,7 @@ body {
   width: auto;
   height: auto; }
 
-introFloatTitle h5 {
+.introFloatTitles {
   display: inline; }
 
 .blurBack {

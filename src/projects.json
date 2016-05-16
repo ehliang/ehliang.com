@@ -50,21 +50,15 @@
         "builtWith": "nodeJs, Java, reactJs",
         "image": "./abc",
         "link": "devpost"
-      },
-      {
-        "projectName": "dCharged",
-        "hackathon": "NordicIOT Hackathon",
-        "location": "Mälmo, Sweden",
-        "time": "30h",
-        "description": "Patients",
-        "builtWith": "nodeJs, Java, reactJs",
-        "image": "./abc",
-        "link": "devpost"
       }
     ],
     "personal": [
       {
-        "projectName": "Raspberry Pi Good Morning"
+        "projectName": "ehliang.com",
+        "description":"This website. Built completly from scratch.",
+        "builtWith":"nodejs",
+        "image": "./abc",
+        "link":"lol"
       },
       {
         "projectName": "LaunchPad Dimming"

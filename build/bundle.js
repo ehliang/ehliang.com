@@ -103,7 +103,7 @@
 							{ className: 'nav-item active' },
 							React.createElement(
 								'a',
-								{ className: 'nav-link', href: '#' },
+								{ className: 'nav-link', href: '#about' },
 								'About Me',
 								React.createElement(
 									'span',
@@ -117,7 +117,7 @@
 							{ className: 'nav-item' },
 							React.createElement(
 								'a',
-								{ className: 'nav-link', href: '#' },
+								{ className: 'nav-link', href: '#projects' },
 								'Projects'
 							)
 						),
@@ -126,7 +126,7 @@
 							{ className: 'nav-item' },
 							React.createElement(
 								'a',
-								{ className: 'nav-link', href: '#' },
+								{ className: 'nav-link', href: '#resume' },
 								'Resume'
 							)
 						),
@@ -135,7 +135,7 @@
 							{ className: 'nav-item' },
 							React.createElement(
 								'a',
-								{ className: 'nav-link', href: '#' },
+								{ className: 'nav-link', href: '#contact' },
 								'Contact Me'
 							)
 						)
@@ -162,7 +162,11 @@
 						)
 					)
 				),
-				React.createElement(Portfolio, null),
+				React.createElement(
+					'div',
+					{ className: 'container' },
+					React.createElement(Portfolio, null)
+				),
 				React.createElement(Resume, null),
 				React.createElement(Contact, null)
 			);
@@ -177,7 +181,7 @@
 			return React.createElement(
 				'div',
 				{ className: 'introFloat' },
-				React.createElement('img', { className: 'profilePic', src: '/img/globe.png' }),
+				React.createElement('img', { className: 'profilePic', src: 'src/img/globe.png' }),
 				React.createElement(
 					'h1',
 					{ className: 'introFloatTitle' },
@@ -190,7 +194,7 @@
 				),
 				React.createElement(
 					'h5',
-					{ className: 'introFloatTitle' },
+					{ className: 'introFloatTitles' },
 					'Check me out on '
 				),
 				React.createElement(
@@ -200,7 +204,7 @@
 				),
 				React.createElement(
 					'h5',
-					{ className: 'introFloatTitle' },
+					{ className: 'introFloatTitles' },
 					' and '
 				),
 				React.createElement(
@@ -217,11 +221,13 @@
 		displayName: 'Portfolio',
 
 		getInitialState: function () {
-			return { description: "Click on any project to learn more" };
+			return { description: "Click on any project to learn more.", initialClick: true, hack: true };
 		},
 
-		handleClick: function (data) {
-			this.setState({ description: data.projectName });
+		handleClick: function (data, hack) {
+			this.setState({ initialClick: false });
+			this.setState({ description: data });
+			this.setState({ hack: hack });
 		},
 
 		splitRows: function (inputJson) {
@@ -243,6 +249,56 @@
 			var hacks = json.projects.hackathons;
 			var hackProjects = this.splitRows(hacks);
 
+			var personal = json.projects.personal;
+
+			var personalProjects = this.splitRows(personal);
+
+			var project = this.state.description;
+
+			var infoText = this.state.initialClick ? this.state.description : this.state.hack ? React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'div',
+					null,
+					'Project Name: ',
+					project.projectName
+				),
+				React.createElement(
+					'div',
+					null,
+					'Hackathon: ',
+					project.hackathon
+				),
+				React.createElement(
+					'div',
+					null,
+					'Hours: ',
+					project.time
+				),
+				React.createElement(
+					'div',
+					null,
+					'Location: ',
+					project.location
+				),
+				React.createElement(
+					'div',
+					null,
+					'About: ',
+					project.description
+				)
+			) : React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'div',
+					null,
+					'Project Name: ',
+					project.projectName
+				)
+			);
+
 			return React.createElement(
 				'section',
 				null,
@@ -252,22 +308,50 @@
 					React.createElement(
 						'div',
 						{ className: 'col-md-8' },
-						'Projects',
+						React.createElement(
+							'h1',
+							null,
+							'Projects'
+						),
+						React.createElement(
+							'h3',
+							null,
+							'Hackathons'
+						),
 						hackProjects.map(function (hacks, i) {
 
 							return React.createElement(
 								'div',
 								{ className: 'row', key: i },
-								React.createElement(PortfolioSquare, { data: hacks[0], onClick: this.handleClick.bind(this, hacks[0]) }),
-								React.createElement(PortfolioSquare, { data: hacks[1], onClick: this.handleClick.bind(this, hacks[1]) }),
-								React.createElement(PortfolioSquare, { data: hacks[2], onClick: this.handleClick.bind(this, hacks[2]) })
+								hacks.map(function (proj, j) {
+									return React.createElement(PortfolioSquare, { data: proj, onClick: this.handleClick.bind(this, proj, true) });
+								}, this)
+							);
+						}, this),
+						React.createElement(
+							'h3',
+							null,
+							'Personal'
+						),
+						personalProjects.map(function (personal, i) {
+							return React.createElement(
+								'div',
+								{ className: 'row', key: i },
+								personal.map(function (proj, j) {
+									return React.createElement(PortfolioSquare, { data: proj, onClick: this.handleClick.bind(this, proj, false) });
+								}, this)
 							);
 						}, this)
 					),
 					React.createElement(
 						'div',
 						{ className: 'col-md-4' },
-						this.state.description
+						React.createElement(
+							'h1',
+							null,
+							'Info'
+						),
+						infoText
 					)
 				)
 			);
@@ -278,11 +362,27 @@
 	var PortfolioSquare = React.createClass({
 		displayName: 'PortfolioSquare',
 
+		getInitialState: function () {
+			return { hover: false };
+		},
+
+		onMouseOver: function () {
+			this.setState({ hover: true });
+		},
+		onMouseOut: function () {
+			this.setState({ hover: false });
+		},
+
 		render: function () {
+
 			return React.createElement(
 				'div',
-				{ className: 'col-md-4', onClick: this.props.onClick },
-				this.props.data.projectName
+				{ className: 'col-md-4 panel panel-default', onClick: this.props.onClick },
+				React.createElement(
+					'div',
+					{ className: 'panel-body portfolio-square', onMouseOver: this.onMouseOver, onMouseOut: this.onMouseOut },
+					this.props.data.projectName
+				)
 			);
 		}
 
@@ -294,7 +394,7 @@
 		render: function () {
 			return React.createElement(
 				'section',
-				{ className: 'resume' },
+				{ className: 'resume', id: 'resume' },
 				React.createElement(
 					'div',
 					{ className: 'container' },
@@ -306,7 +406,12 @@
 					React.createElement(
 						'a',
 						{ href: 'https://github.com/ehliang/resume/raw/master/Resume.pdf' },
-						React.createElement('img', { src: './img/download.png' })
+						React.createElement('img', { className: 'center-block downloadIcon', src: 'src/img/download.png' })
+					),
+					React.createElement(
+						'h3',
+						{ className: 'download' },
+						'Download'
 					)
 				)
 			);
@@ -330,20 +435,29 @@
 		render: function () {
 			return React.createElement(
 				'section',
-				null,
+				{ className: 'contact', id: 'contact' },
 				React.createElement(
-					'form',
-					null,
-					React.createElement(Recaptcha, {
-						sitekey: '6LcA8h8TAAAAAMf3AZfSM7aHZzCTBbg7Jx18wy8b',
-						size: 'compact',
-						render: 'explicit',
-						verifyCallback: this.verifyCallback,
-						onloadCallback: this.callback,
-						expiredCallback: this.expiredCallback
-					}),
-					React.createElement('br', null),
-					React.createElement('input', { type: 'submit', value: 'Submit' })
+					'div',
+					{ className: 'container' },
+					React.createElement(
+						'h1',
+						null,
+						'Contact Me'
+					),
+					React.createElement(
+						'form',
+						null,
+						React.createElement(Recaptcha, {
+							sitekey: '6LcA8h8TAAAAAMf3AZfSM7aHZzCTBbg7Jx18wy8b',
+							size: 'compact',
+							render: 'explicit',
+							verifyCallback: this.verifyCallback,
+							onloadCallback: this.callback,
+							expiredCallback: this.expiredCallback
+						}),
+						React.createElement('br', null),
+						React.createElement('input', { type: 'submit', value: 'Submit' })
+					)
 				)
 			);
 		}
@@ -20477,7 +20591,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: white; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-family: 'Raleway', sans-serif;\n  font-weight: 200;\n  color: black; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.introBlock {\n  margin-bottom: 50em; }\n\n.profilePic {\n  max-width: 200px;\n  width: auto;\n  height: auto; }\n\nh5 {\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.4;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #0066ff;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #0066ff;\n  color: white; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
+	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.introBlock {\n  margin-bottom: 50em; }\n\n.profilePic {\n  max-width: 200px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.4;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #0066ff;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #0066ff;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: #0066ff;\n  color: white; }\n\n.downloadIcon {\n  max-width: 100px; }\n\n.download {\n  text-align: center; }\n\n.panel-default:hover {\n  background-color: #0066ff;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
 
 	// exports
 
@@ -20798,19 +20912,17 @@
 		"projects": {
 			"hackathons": [
 				{
-					"position": 0,
 					"projectName": "dCharged",
 					"hackathon": "NordicIOT Hackathon (2016)",
 					"location": "Mälmo, Sweden",
 					"time": "30h",
-					"description": "Patients",
+					"description": "Patientseeee fejfie jeoijfo ijeiofjoie jgoierj oigejoi gjeroig jeoirjg ioerjgo ierjgoij eroigjer iogjeorij goierjgoierjn",
 					"builtWith": "nodeJs, Java, reactJs",
 					"image": "./abc",
 					"link": "devpost"
 				},
 				{
-					"position": 1,
-					"projectName": "Traveller Information Network",
+					"projectName": "TiN",
 					"hackathon": "MHacks: Refactor (2016)",
 					"location": "University of Michigan, Ann Arbor",
 					"time": "48h",
@@ -20820,10 +20932,9 @@
 					"link": "devpost"
 				},
 				{
-					"position": 2,
 					"projectName": "XpressCart",
 					"hackathon": "PennApps XIII (2016)",
-					"location": "University of Pennsylvania, Pennsylvania",
+					"location": "University of Pennsylvania, Philadelphia",
 					"time": "36h",
 					"description": "Shopping",
 					"builtWith": "Android, arduino",
@@ -20831,41 +20942,42 @@
 					"link": "devpost"
 				},
 				{
-					"position": 0,
-					"projectName": "dCharged",
-					"hackathon": "NordicIOT Hackathon",
-					"location": "Mälmo, Sweden",
+					"projectName": "LeapStacks",
+					"hackathon": "Deltahacks II (2016)",
+					"location": "McMaster University, Hamilton ",
 					"time": "30h",
-					"description": "Patients",
+					"description": "Kids",
 					"builtWith": "nodeJs, Java, reactJs",
 					"image": "./abc",
 					"link": "devpost"
 				},
 				{
-					"position": 1,
-					"projectName": "dCharged",
-					"hackathon": "NordicIOT Hackathon",
-					"location": "Mälmo, Sweden",
+					"projectName": "Myo-Unlock",
+					"hackathon": "Waterloo Tech Retreat (2015)",
+					"location": "University of Waterloo, Waterloo",
 					"time": "30h",
-					"description": "Patients",
-					"builtWith": "nodeJs, Java, reactJs",
-					"image": "./abc",
-					"link": "devpost"
-				},
-				{
-					"position": 2,
-					"projectName": "dCharged",
-					"hackathon": "NordicIOT Hackathon",
-					"location": "Mälmo, Sweden",
-					"time": "30h",
-					"description": "Patients",
+					"description": "Security",
 					"builtWith": "nodeJs, Java, reactJs",
 					"image": "./abc",
 					"link": "devpost"
 				}
+			],
+			"personal": [
+				{
+					"projectName": "ehliang.com",
+					"description": "This website. Built completly from scratch.",
+					"builtWith": "nodejs",
+					"image": "./abc",
+					"link": "lol"
+				},
+				{
+					"projectName": "LaunchPad Dimming"
+				},
+				{
+					"projectName": "ehliang.com"
+				}
 			]
-		},
-		"personal": "abc"
+		}
 	};
 
 /***/ },
