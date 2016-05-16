@@ -51,16 +51,16 @@ var Content = React.createClass({
 		  <a className="navbar-brand" href="#">Ethan Liang</a>
 		  <ul className="nav navbar-nav">
 		    <li className="nav-item active">
-		      <a className="nav-link" href="#">About Me<span className="sr-only">(current)</span></a>
+		      <a className="nav-link" href="#about">About Me<span className="sr-only">(current)</span></a>
 		    </li>
 		    <li className="nav-item">
-		      <a className="nav-link" href="#">Projects</a>
+		      <a className="nav-link" href="#projects">Projects</a>
 		    </li>
 		    <li className="nav-item">
-		      <a className="nav-link" href="#">Resume</a>
+		      <a className="nav-link" href="#resume">Resume</a>
 		    </li>
 		    <li className="nav-item">
-		      <a className="nav-link" href="#">Contact Me</a>
+		      <a className="nav-link" href="#contact">Contact Me</a>
 		    </li>
 		  </ul>
 		</nav>
@@ -71,14 +71,14 @@ var Content = React.createClass({
             <div className="row">
                 <div className="col-lg-12">
                 		<h1> About Me</h1>
-
                 </div>
             </div>
         </div>
     </header>
 
-
+    <div className="container">
     <Portfolio/> 
+    </div>
 
     <Resume/>
 
@@ -120,12 +120,13 @@ var IntroScreen = React.createClass({
 
 var Portfolio = React.createClass({
 	getInitialState: function() { 
-		return {description: "Click on any project to learn more", initialClick:true};
+		return {description: "Click on any project to learn more", initialClick:true, hack:true};
 	}, 
 
-	handleClick: function(data) {
+	handleClick: function(data, hack) {
 		this.setState({initialClick:false});
 		this.setState({description: data});
+		this.setState({hack:hack});
 
 	}, 
 
@@ -151,11 +152,16 @@ var Portfolio = React.createClass({
 		var hacks = json.projects.hackathons; 
 		var hackProjects = this.splitRows(hacks); 
 
+		var personal = json.projects.personal; 
+
+		var personalProjects = this.splitRows(personal);
+
 		var project = this.state.description; 
 
 		var infoText = this.state.initialClick ? this.state.description : 
 
-		<div className="row">
+		(this.state.hack ? 
+		<div>
 
 			<div>Project Name: {project.projectName}</div>
 			<div>Hackathon: {project.hackathon}</div>
@@ -163,29 +169,46 @@ var Portfolio = React.createClass({
 			<div>Location: {project.location}</div>
 			<div>About: {project.description}</div>
 
-		</div>
+		</div>:
+		<div>
+			<div>Project Name: {project.projectName}</div>
 
-
-
-		;
+		</div>);
 
 		return (
 			<section> 
 			<div className="row">
 				<div className="col-md-8">
-				Projects
+				<h1>Projects</h1>
+
+				<h3>Hackathons</h3>
+
 				{hackProjects.map(function(hacks, i){
 
 						return(<div className="row" key={i}>
-							<PortfolioSquare data={hacks[0]} onClick={this.handleClick.bind(this, hacks[0])}/>
-							<PortfolioSquare data={hacks[1]} onClick={this.handleClick.bind(this, hacks[1])}/>
-							<PortfolioSquare data={hacks[2]} onClick={this.handleClick.bind(this, hacks[2])}/>
+							<PortfolioSquare data={hacks[0]} onClick={this.handleClick.bind(this, hacks[0], true)}/>
+							<PortfolioSquare data={hacks[1]} onClick={this.handleClick.bind(this, hacks[1], true)}/>
+							<PortfolioSquare data={hacks[2]} onClick={this.handleClick.bind(this, hacks[2], true)}/>
 							</div>);
 				}, this)}
 
-				</div> 
-				<div className="col-md-4">
+				<h3>Personal</h3>
+				{personalProjects.map(function(personal,i){
+						return(<div className="row" key={i}>
+							<PortfolioSquare data={personal[0]} onClick={this.handleClick.bind(this, personal[0], false)}/>
+							<PortfolioSquare data={personal[1]} onClick={this.handleClick.bind(this, personal[1], false)}/>
+							<PortfolioSquare data={personal[2]} onClick={this.handleClick.bind(this, personal[2], false)}/>
+							</div>);
 
+				}, this)}
+
+				</div> 
+
+
+
+
+				<div className="col-md-4">
+				<h1>Info</h1>
 				{infoText}
 				</div>
 				</div>
@@ -200,10 +223,25 @@ var Portfolio = React.createClass({
 
 
 var PortfolioSquare = React.createClass({ 
+	getInitialState: function(){
+		return {hover:false};
+	},
+
+	onMouseOver: function(){
+		this.setState({hover:true});
+	}, 
+	onMouseOut: function(){
+		this.setState({hover:false});
+	},
+
 	render: function(){
+
 		return (
-			<div className="col-md-4" onClick={this.props.onClick}> 
+
+			<div className="col-md-4 panel panel-default" onClick={this.props.onClick}> 
+				<div className="panel-body portfolio-square" onMouseOver ={this.onMouseOver} onMouseOut ={this.onMouseOut}>
 				{this.props.data.projectName} 
+				</div>
 			</div> 
 		); 
 	}
@@ -213,12 +251,13 @@ var PortfolioSquare = React.createClass({
 var Resume = React.createClass({ 
 	render: function(){
 		return (
-			<section className="resume"> 
+			<section className="resume" id="resume"> 
 			<div className="container">
 			<h1>Resume</h1>
 			<a href="https://github.com/ehliang/resume/raw/master/Resume.pdf">
-			<img src="./img/download.png"/>
+			<img className="center-block downloadIcon" src="./img/download.png"/>
 			</a>
+				<h3 className="download">Download</h3>
 			</div>
 			</section> 
 
@@ -242,7 +281,8 @@ var Contact = React.createClass({
 	render: function()
 	{
 		return (
-			<section className="contact">
+			<section className="contact" id="contact">
+			<div className="container">
 			<h1>Contact Me</h1>
 			<form>
 			  <Recaptcha
@@ -254,8 +294,10 @@ var Contact = React.createClass({
           		expiredCallback={this.expiredCallback}
   			/>
 			<br/>
+
       		<input type="submit" value="Submit"/>
 			</form>
+			</div>
 			</section>
 			);
 	}

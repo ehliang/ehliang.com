@@ -1,5 +1,6 @@
 body {
-  background-color: white; }
+  background-color: white;
+  font-family: 'Raleway', sans-serif; }
 
 .introFloat {
   position: fixed;
@@ -11,7 +12,6 @@ body {
   z-index: 202020; }
 
 .introFloatTitle {
-  font-family: 'Raleway', sans-serif;
   font-weight: 200;
   color: black; }
 
@@ -27,7 +27,7 @@ body {
   width: auto;
   height: auto; }
 
-h5 {
+introFloatTitle h5 {
   display: inline; }
 
 .blurBack {
@@ -63,5 +63,20 @@ header {
   text-align: left;
   background: #0066ff;
   color: white; }
+
+.downloadIcon {
+  max-width: 100px; }
+
+.download {
+  text-align: center; }
+
+.panel-default:hover {
+  background-color: #0066ff;
+  color: white; }
+
+.portfolio-square {
+  text-align: center;
+  cursor: pointer;
+  cursor: hand; }
 
 /*# sourceMappingURL=main.css.map */
