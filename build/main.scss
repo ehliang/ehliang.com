@@ -1,4 +1,4 @@
-$superColor: #0066ff; 
+$superColor: #2874EE; 
 
 
 body {
@@ -28,8 +28,8 @@ body {
 	display:inline;
 }
 
-.introBlock{
-	margin-bottom: 50em; 
+.intro-block{
+	margin-top:10%; 
 }
 
 .profilePic{
@@ -77,8 +77,8 @@ header {
 
 .contact{
 	text-align:left; 
-	background: $superColor;
-	color: white; 
+	background: white;
+	color: black; 
 }
 
 .downloadIcon{

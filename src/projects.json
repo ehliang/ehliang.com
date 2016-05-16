@@ -5,8 +5,8 @@
         "projectName": "dCharged",
         "hackathon": "NordicIOT Hackathon (2016)",
         "location": "Mälmo, Sweden",
-        "time": "30h",
-        "description": "Patientseeee fejfie jeoijfo ijeiofjoie jgoierj oigejoi gjeroig jeoirjg ioerjgo ierjgoij eroigjer iogjeorij goierjgoierjn",
+        "time": "48h",
+        "description": "Patients",
         "builtWith": "nodeJs, Java, reactJs",
         "image": "./abc",
         "link": "devpost"
@@ -15,7 +15,7 @@
         "projectName": "TiN",
         "hackathon": "MHacks: Refactor (2016)",
         "location": "University of Michigan, Ann Arbor",
-        "time": "48h",
+        "time": "36h",
         "description": "Travellers",
         "builtWith": "nodeJs, Android, Firebase",
         "image": "./abc",
@@ -34,8 +34,8 @@
       {
         "projectName": "LeapStacks",
         "hackathon": "Deltahacks II (2016)",
-        "location": "McMaster University, Hamilton ",
-        "time": "30h",
+        "location": "McMaster University, Hamilton",
+        "time": "24h",
         "description": "Kids",
         "builtWith": "nodeJs, Java, reactJs",
         "image": "./abc",
@@ -45,7 +45,7 @@
         "projectName": "Myo-Unlock",
         "hackathon": "Waterloo Tech Retreat (2015)",
         "location": "University of Waterloo, Waterloo",
-        "time": "30h",
+        "time": "12h",
         "description": "Security",
         "builtWith": "nodeJs, Java, reactJs",
         "image": "./abc",
@@ -55,16 +55,38 @@
     "personal": [
       {
         "projectName": "ehliang.com",
-        "description":"This website. Built completly from scratch.",
-        "builtWith":"nodejs",
+        "description": "This website. Built completly from scratch.",
+        "builtWith": "nodejs",
         "image": "./abc",
-        "link":"lol"
+        "link": "lol"
       },
       {
-        "projectName": "LaunchPad Dimming"
-      }, 
+        "projectName": "Gitalytics",
+        "description": "This website. Built completly from scratch.",
+        "builtWith": "nodejs",
+        "image": "./abc",
+        "link": "lol"
+      },
       {
-      	"projectName": "ehliang.com"
+        "projectName": "LaunchPad Controller",
+        "description": "This website. Built completly from scratch.",
+        "builtWith": "nodejs",
+        "image": "./abc",
+        "link": "lol"
+      },
+      {
+        "projectName": "RaspPiGoodMorning",
+        "description": "This website. Built completly from scratch.",
+        "builtWith": "nodejs",
+        "image": "./abc",
+        "link": "lol"
+      },
+      {
+        "projectName": "vocem",
+        "description": "This website. Built completly from scratch.",
+        "builtWith": "nodejs",
+        "image": "./abc",
+        "link": "lol"
       }
     ]
   }

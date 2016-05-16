@@ -19,8 +19,8 @@ body {
   margin-top: 20em;
   display: inline; }
 
-.introBlock {
-  margin-bottom: 50em; }
+.intro-block {
+  margin-top: 10%; }
 
 .profilePic {
   max-width: 200px;
@@ -51,18 +51,18 @@ body {
 
 header {
   text-align: left;
-  background: #0066ff;
+  background: #2874EE;
   color: white; }
 
 .resume {
   text-align: left;
-  background: #0066ff;
+  background: #2874EE;
   color: white; }
 
 .contact {
   text-align: left;
-  background: #0066ff;
-  color: white; }
+  background: white;
+  color: black; }
 
 .downloadIcon {
   max-width: 100px; }
@@ -71,7 +71,7 @@ header {
   text-align: center; }
 
 .panel-default:hover {
-  background-color: #0066ff;
+  background-color: #2874EE;
   color: white; }
 
 .portfolio-square {

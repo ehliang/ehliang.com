@@ -75,9 +75,7 @@ var Content = React.createClass({
         </div>
     </header>
 
-    <div className="container">
     <Portfolio/> 
-    </div>
 
     <Resume/>
 
@@ -97,7 +95,7 @@ var IntroScreen = React.createClass({
 		return (
 
 			<div className="introFloat">
-
+			<div className="intro-block">
 				<img className="profilePic" src="src/img/globe.png"/>
 				<h1 className="introFloatTitle">Hey, I'm Ethan Liang.</h1>
 				<h3 className="introFloatTitle">Developer, Designer, Entrepreneur.</h3>
@@ -106,7 +104,7 @@ var IntroScreen = React.createClass({
 				<a className="introFloatTitle" href="https://github.com/ehliang">GitHub</a> 
 				<h5 className="introFloatTitles"> and </h5>
 				<a className="introFloatTitle" href="https://www.linkedin.com/in/ehliang">LinkedIn.</a> 
-
+				</div>
 			</div> 
 
 
@@ -114,7 +112,6 @@ var IntroScreen = React.createClass({
 	}
 
 }); 
-
 
 
 var Portfolio = React.createClass({
@@ -176,12 +173,13 @@ var Portfolio = React.createClass({
 
 		return (
 			<section> 
+			<div className="container">
 			<div className="row">
 				<div className="col-md-8">
 				<h1>Projects</h1>
-
+				<div className="row">
 				<h3>Hackathons</h3>
-
+				</div>
 				{hackProjects.map(function(hacks, i){
 
 						return(<div className="row" key={i}>
@@ -190,8 +188,9 @@ var Portfolio = React.createClass({
 							}, this)}
 							</div>);
 				}, this)}
-
+				<div className="row">
 				<h3>Personal</h3>
+				</div>
 				{personalProjects.map(function(personal,i){
 						return(<div className="row" key={i}>
 							{personal.map(function(proj,j){
@@ -201,13 +200,10 @@ var Portfolio = React.createClass({
 				}, this)}
 
 				</div> 
-
-
-
-
 				<div className="col-md-4">
 				<h1>Info</h1>
 				{infoText}
+				</div>
 				</div>
 				</div>
 			</section> 
@@ -221,23 +217,10 @@ var Portfolio = React.createClass({
 
 
 var PortfolioSquare = React.createClass({ 
-	getInitialState: function(){
-		return {hover:false};
-	},
-
-	onMouseOver: function(){
-		this.setState({hover:true});
-	}, 
-	onMouseOut: function(){
-		this.setState({hover:false});
-	},
-
 	render: function(){
-
 		return (
-
 			<div className="col-md-4 panel panel-default" onClick={this.props.onClick}> 
-				<div className="panel-body portfolio-square" onMouseOver ={this.onMouseOver} onMouseOut ={this.onMouseOut}>
+				<div className="panel-body portfolio-square">
 				{this.props.data.projectName} 
 				</div>
 			</div> 
@@ -252,7 +235,7 @@ var Resume = React.createClass({
 			<section className="resume" id="resume"> 
 			<div className="container">
 			<h1>Resume</h1>
-			<a href="https://github.com/ehliang/resume/raw/master/Resume.pdf">
+			<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
 			<img className="center-block downloadIcon" src="src/img/download.png"/>
 			</a>
 				<h3 className="download">Download</h3>
@@ -283,9 +266,20 @@ var Contact = React.createClass({
 			<div className="container">
 			<h1>Contact Me</h1>
 			<form>
+
+			<fieldset className="form-group">
+			    <label for="inputEmail">Email address</label>
+    			<input type="email" className="form-control" id="inputEmail" placeholder="Enter email"/>
+			</fieldset>
+
+			<fieldset className="form-group">
+    			<label for="textarea">Message</label>
+    			<textarea className="form-control" id="textarea" rows="3" placeholder="Message"></textarea>
+			</fieldset>
+
 			  <Recaptcha
     			sitekey="6LcA8h8TAAAAAMf3AZfSM7aHZzCTBbg7Jx18wy8b"
-          		size="compact"
+          		size="normal"
           		render="explicit"
           		verifyCallback={this.verifyCallback}
           		onloadCallback={this.callback}
@@ -293,7 +287,7 @@ var Contact = React.createClass({
   			/>
 			<br/>
 
-      		<input type="submit" value="Submit"/>
+  			<button type="submit" value="submit" className="btn btn-primary">Submit</button>
 			</form>
 			</div>
 			</section>
