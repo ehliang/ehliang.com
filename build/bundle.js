@@ -350,13 +350,35 @@
 				React.createElement(
 					'h4',
 					null,
+					'Built With:'
+				),
+				project.builtWith.map(function (built, i) {
+					return React.createElement(
+						'div',
+						{ key: i, className: 'btn-static' },
+						built.tech
+					);
+				}, this),
+				React.createElement(
+					'h4',
+					null,
 					'Links'
 				),
-				React.createElement(
-					'div',
-					null,
-					project.link
-				)
+				project.link.map(function (link, i) {
+					return React.createElement(
+						'div',
+						{ key: i },
+						React.createElement(
+							'a',
+							{ href: link.link },
+							React.createElement(
+								'h5',
+								null,
+								link.linkName
+							)
+						)
+					);
+				}, this)
 			) : React.createElement(
 				'div',
 				null,
@@ -20684,7 +20706,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 200px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.4;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black; }\n\n.downloadIcon {\n  max-width: 100px; }\n\n.download {\n  text-align: center; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
+	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 200px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.4;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black; }\n\n.downloadIcon {\n  max-width: 100px; }\n\n.download {\n  text-align: center; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n.btn-static {\n  display: inline;\n  background-color: white;\n  border: 1px solid;\n  cursor: default; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
 
 	// exports
 
@@ -21005,14 +21027,26 @@
 		"projects": {
 			"hackathons": [
 				{
-					"projectName": "dCharged",
+					"projectName": "dCharge",
 					"hackathon": "NordicIOT Hackathon (2016)",
-					"location": "Mälmo, Sweden",
+					"location": "Malmö, Sweden",
 					"time": "48h",
-					"description": "Patients",
-					"builtWith": "nodeJs, Java, reactJs",
+					"description": "Having been sponsored ",
 					"image": "./abc",
-					"link": "div"
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/AroundTheLines/dCharge"
+						}
+					],
+					"builtWith": [
+						{
+							"tech": "node.js"
+						},
+						{
+							"tech": "AngularJS"
+						}
+					]
 				},
 				{
 					"projectName": "TiN",
@@ -21020,9 +21054,23 @@
 					"location": "University of Michigan, Ann Arbor",
 					"time": "36h",
 					"description": "Travellers",
-					"builtWith": "nodeJs, Android, Firebase",
 					"image": "./abc",
-					"link": "devpost"
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/TIN"
+						},
+						{
+							"linkName": "Devpost",
+							"link": "http://devpost.com/software/tourist-information-network"
+						}
+					],
+					"builtWith": [
+						{
+							"a": "node.js",
+							"b": "AngularJS"
+						}
+					]
 				},
 				{
 					"projectName": "XpressCart",
@@ -21030,9 +21078,23 @@
 					"location": "University of Pennsylvania, Philadelphia",
 					"time": "36h",
 					"description": "Shopping",
-					"builtWith": "Android, arduino",
 					"image": "./abc",
-					"link": "devpost"
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/Xpresscart"
+						},
+						{
+							"linkName": "Devpost",
+							"link": "http://devpost.com/software/xpresscart-ypct9e"
+						}
+					],
+					"builtWith": [
+						{
+							"a": "node.js",
+							"b": "AngularJS"
+						}
+					]
 				},
 				{
 					"projectName": "LeapStacks",
@@ -21040,9 +21102,23 @@
 					"location": "McMaster University, Hamilton",
 					"time": "24h",
 					"description": "Kids",
-					"builtWith": "nodeJs, Java, reactJs",
 					"image": "./abc",
-					"link": "devpost"
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/LeapStacks"
+						},
+						{
+							"linkName": "Devpost",
+							"link": "http://devpost.com/software/leapstax"
+						}
+					],
+					"builtWith": [
+						{
+							"a": "node.js",
+							"b": "AngularJS"
+						}
+					]
 				},
 				{
 					"projectName": "Myo-Unlock",
@@ -21050,9 +21126,23 @@
 					"location": "University of Waterloo, Waterloo",
 					"time": "12h",
 					"description": "Security",
-					"builtWith": "nodeJs, Java, reactJs",
 					"image": "./abc",
-					"link": "devpost"
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/myo-unlock"
+						},
+						{
+							"linkName": "Devpost",
+							"link": "http://devpost.com/software/motion-based-secure-entry"
+						}
+					],
+					"builtWith": [
+						{
+							"a": "node.js",
+							"b": "AngularJS"
+						}
+					]
 				}
 			],
 			"personal": [

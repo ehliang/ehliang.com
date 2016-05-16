@@ -80,4 +80,10 @@ header {
   cursor: pointer;
   cursor: hand; }
 
+.btn-static {
+  display: inline;
+  background-color: white;
+  border: 1px solid;
+  cursor: default; }
+
 /*# sourceMappingURL=main.css.map */

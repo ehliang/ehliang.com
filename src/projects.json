@@ -2,14 +2,26 @@
   "projects": {
     "hackathons": [
       {
-        "projectName": "dCharged",
+        "projectName": "dCharge",
         "hackathon": "NordicIOT Hackathon (2016)",
-        "location": "Mälmo, Sweden",
+        "location": "Malmö, Sweden",
         "time": "48h",
-        "description": "Patients",
-        "builtWith": "nodeJs, Java, reactJs",
+        "description": "Having been sponsored ",
         "image": "./abc",
-        "link": "div"
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/AroundTheLines/dCharge"
+          }
+        ],
+        "builtWith": [
+          {
+            "tech": "node.js"
+          },
+          {
+            "tech": "AngularJS"
+          }
+        ]
       },
       {
         "projectName": "TiN",
@@ -17,9 +29,23 @@
         "location": "University of Michigan, Ann Arbor",
         "time": "36h",
         "description": "Travellers",
-        "builtWith": "nodeJs, Android, Firebase",
         "image": "./abc",
-        "link": "devpost"
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/TIN"
+          },
+          {
+            "linkName": "Devpost",
+            "link": "http://devpost.com/software/tourist-information-network"
+          }
+        ],
+        "builtWith": [
+          {
+            "a": "node.js",
+            "b": "AngularJS"
+          }
+        ]
       },
       {
         "projectName": "XpressCart",
@@ -27,9 +53,23 @@
         "location": "University of Pennsylvania, Philadelphia",
         "time": "36h",
         "description": "Shopping",
-        "builtWith": "Android, arduino",
         "image": "./abc",
-        "link": "devpost"
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/Xpresscart"
+          },
+          {
+            "linkName": "Devpost",
+            "link": "http://devpost.com/software/xpresscart-ypct9e"
+          }
+        ],
+        "builtWith": [
+          {
+            "a": "node.js",
+            "b": "AngularJS"
+          }
+        ]
       },
       {
         "projectName": "LeapStacks",
@@ -37,9 +77,23 @@
         "location": "McMaster University, Hamilton",
         "time": "24h",
         "description": "Kids",
-        "builtWith": "nodeJs, Java, reactJs",
         "image": "./abc",
-        "link": "devpost"
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/LeapStacks"
+          },
+          {
+            "linkName": "Devpost",
+            "link": "http://devpost.com/software/leapstax"
+          }
+        ],
+        "builtWith": [
+          {
+            "a": "node.js",
+            "b": "AngularJS"
+          }
+        ]
       },
       {
         "projectName": "Myo-Unlock",
@@ -47,9 +101,23 @@
         "location": "University of Waterloo, Waterloo",
         "time": "12h",
         "description": "Security",
-        "builtWith": "nodeJs, Java, reactJs",
         "image": "./abc",
-        "link": "devpost"
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/myo-unlock"
+          },
+          {
+            "linkName": "Devpost",
+            "link": "http://devpost.com/software/motion-based-secure-entry"
+          }
+        ],
+        "builtWith": [
+          {
+            "a": "node.js",
+            "b": "AngularJS"
+          }
+        ]
       }
     ],
     "personal": [

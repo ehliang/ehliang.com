@@ -190,9 +190,18 @@ var Portfolio = React.createClass({
 			<div>{project.time}</div> 
 			<h4>Description:</h4>
 			<div>{project.description}</div>
-			<h4>Links</h4>
-			<div>{project.link}</div>
+			<h4>Built With:</h4>
 
+			{project.builtWith.map(function(built,i){
+				return(<div key={i} className="btn-static">{built.tech}</div> ); 
+
+			}, this)}
+
+			<h4>Links</h4>
+			{project.link.map(function(link,i){
+				return(<div key={i}><a href={link.link}><h5>{link.linkName}</h5></a></div> ); 
+
+			}, this)}
 
 		</div>:
 		<div>
