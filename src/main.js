@@ -46,6 +46,27 @@ var Content = React.createClass({
 		<div>
 
 
+	<Navbar/>
+
+	<About/>
+
+    <Portfolio/> 
+
+    <Resume/>
+
+    <Contact/>
+
+    </div>
+
+
+			);
+	}
+
+});
+
+var Navbar = React.createClass({
+	render: function(){
+		return(
 		<nav className="navbar navbar-dark">
 		  <a className="navbar-brand" href="#">Ethan Liang</a>
 		  <ul className="nav navbar-nav">
@@ -61,32 +82,33 @@ var Content = React.createClass({
 		    <li className="nav-item">
 		      <a className="nav-link" href="#contact">Contact Me</a>
 		    </li>
+		   	<li className="nav-item">
+		      <a className="nav-link" href="https://github.com/ehliang">GitHub</a>
+		    </li>
+		   	<li className="nav-item">
+		      <a className="nav-link" href="https://www.linkedin.com/in/ehliang">LinkedIn</a>
+		    </li>
 		  </ul>
 		</nav>
+		);
+	}
+});
 
-
-	<header>
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-12">
-                		<h1> About Me</h1>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <Portfolio/> 
-
-    <Resume/>
-
-    <Contact/>
-
-    </div>
-
-
+var About = React.createClass({
+	render:function(){
+		return (		
+			<header>
+		        <div className="container-fluid">
+		            <div className="row">
+		                <div className="col-lg-12">
+		                		<h1> About Me</h1>
+		                		<h4>I'm Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning. Looking for part-time opportunities.</h4>
+		                </div>
+		            </div>
+		        </div>
+		    </header>
 			);
 	}
-
 });
 
 
@@ -158,12 +180,19 @@ var Portfolio = React.createClass({
 
 		(this.state.hack ? 
 		<div>
+			<h4>Project Name:</h4>
+			<div>{project.projectName}</div>
+			<h4>Hackathon:</h4>
+			<div>{project.hackathon}</div>
+			<h4>Location:</h4> 
+			<div>{project.location}</div>
+			<h4>Time:</h4>
+			<div>{project.time}</div> 
+			<h4>Description:</h4>
+			<div>{project.description}</div>
+			<h4>Links</h4>
+			<div>{project.link}</div>
 
-			<div>Project Name: {project.projectName}</div>
-			<div>Hackathon: {project.hackathon}</div>
-			<div>Hours: {project.time}</div> 
-			<div>Location: {project.location}</div>
-			<div>About: {project.description}</div>
 
 		</div>:
 		<div>
@@ -173,7 +202,7 @@ var Portfolio = React.createClass({
 
 		return (
 			<section> 
-			<div className="container">
+			<div className="container-fluid">
 			<div className="row">
 				<div className="col-md-8">
 				<h1>Projects</h1>
@@ -184,7 +213,7 @@ var Portfolio = React.createClass({
 
 						return(<div className="row" key={i}>
 							{hacks.map(function(proj,j){
-								return (<PortfolioSquare data={proj} onClick={this.handleClick.bind(this, proj, true)}/>);
+								return (<PortfolioSquare key={j} data={proj} onClick={this.handleClick.bind(this, proj, true)}/>);
 							}, this)}
 							</div>);
 				}, this)}
@@ -194,7 +223,7 @@ var Portfolio = React.createClass({
 				{personalProjects.map(function(personal,i){
 						return(<div className="row" key={i}>
 							{personal.map(function(proj,j){
-								return (<PortfolioSquare data={proj} onClick={this.handleClick.bind(this, proj, false)}/>);
+								return (<PortfolioSquare key={j} data={proj} onClick={this.handleClick.bind(this, proj, false)}/>);
 							}, this)}
 							</div>);
 				}, this)}
@@ -233,7 +262,7 @@ var Resume = React.createClass({
 	render: function(){
 		return (
 			<section className="resume" id="resume"> 
-			<div className="container">
+			<div className="container-fluid">
 			<h1>Resume</h1>
 			<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
 			<img className="center-block downloadIcon" src="src/img/download.png"/>
@@ -263,7 +292,7 @@ var Contact = React.createClass({
 	{
 		return (
 			<section className="contact" id="contact">
-			<div className="container">
+			<div className="container-fluid">
 			<h1>Contact Me</h1>
 			<form>
 

@@ -87,87 +87,126 @@
 			return React.createElement(
 				'div',
 				null,
-				React.createElement(
-					'nav',
-					{ className: 'navbar navbar-dark' },
-					React.createElement(
-						'a',
-						{ className: 'navbar-brand', href: '#' },
-						'Ethan Liang'
-					),
-					React.createElement(
-						'ul',
-						{ className: 'nav navbar-nav' },
-						React.createElement(
-							'li',
-							{ className: 'nav-item active' },
-							React.createElement(
-								'a',
-								{ className: 'nav-link', href: '#about' },
-								'About Me',
-								React.createElement(
-									'span',
-									{ className: 'sr-only' },
-									'(current)'
-								)
-							)
-						),
-						React.createElement(
-							'li',
-							{ className: 'nav-item' },
-							React.createElement(
-								'a',
-								{ className: 'nav-link', href: '#projects' },
-								'Projects'
-							)
-						),
-						React.createElement(
-							'li',
-							{ className: 'nav-item' },
-							React.createElement(
-								'a',
-								{ className: 'nav-link', href: '#resume' },
-								'Resume'
-							)
-						),
-						React.createElement(
-							'li',
-							{ className: 'nav-item' },
-							React.createElement(
-								'a',
-								{ className: 'nav-link', href: '#contact' },
-								'Contact Me'
-							)
-						)
-					)
-				),
-				React.createElement(
-					'header',
-					null,
-					React.createElement(
-						'div',
-						{ className: 'container' },
-						React.createElement(
-							'div',
-							{ className: 'row' },
-							React.createElement(
-								'div',
-								{ className: 'col-lg-12' },
-								React.createElement(
-									'h1',
-									null,
-									' About Me'
-								)
-							)
-						)
-					)
-				),
+				React.createElement(Navbar, null),
+				React.createElement(About, null),
 				React.createElement(Portfolio, null),
 				React.createElement(Resume, null),
 				React.createElement(Contact, null)
 			);
 		}
 
+	});
+
+	var Navbar = React.createClass({
+		displayName: 'Navbar',
+
+		render: function () {
+			return React.createElement(
+				'nav',
+				{ className: 'navbar navbar-dark' },
+				React.createElement(
+					'a',
+					{ className: 'navbar-brand', href: '#' },
+					'Ethan Liang'
+				),
+				React.createElement(
+					'ul',
+					{ className: 'nav navbar-nav' },
+					React.createElement(
+						'li',
+						{ className: 'nav-item active' },
+						React.createElement(
+							'a',
+							{ className: 'nav-link', href: '#about' },
+							'About Me',
+							React.createElement(
+								'span',
+								{ className: 'sr-only' },
+								'(current)'
+							)
+						)
+					),
+					React.createElement(
+						'li',
+						{ className: 'nav-item' },
+						React.createElement(
+							'a',
+							{ className: 'nav-link', href: '#projects' },
+							'Projects'
+						)
+					),
+					React.createElement(
+						'li',
+						{ className: 'nav-item' },
+						React.createElement(
+							'a',
+							{ className: 'nav-link', href: '#resume' },
+							'Resume'
+						)
+					),
+					React.createElement(
+						'li',
+						{ className: 'nav-item' },
+						React.createElement(
+							'a',
+							{ className: 'nav-link', href: '#contact' },
+							'Contact Me'
+						)
+					),
+					React.createElement(
+						'li',
+						{ className: 'nav-item' },
+						React.createElement(
+							'a',
+							{ className: 'nav-link', href: 'https://github.com/ehliang' },
+							'GitHub'
+						)
+					),
+					React.createElement(
+						'li',
+						{ className: 'nav-item' },
+						React.createElement(
+							'a',
+							{ className: 'nav-link', href: 'https://www.linkedin.com/in/ehliang' },
+							'LinkedIn'
+						)
+					)
+				)
+			);
+		}
+	});
+
+	var About = React.createClass({
+		displayName: 'About',
+
+		render: function () {
+			return React.createElement(
+				'header',
+				null,
+				React.createElement(
+					'div',
+					{ className: 'container-fluid' },
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-lg-12' },
+							React.createElement(
+								'h1',
+								null,
+								' About Me'
+							),
+							React.createElement(
+								'h4',
+								null,
+								'I\'m Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning. Looking for part-time opportunities.'
+							)
+						)
+					)
+				)
+			);
+		}
 	});
 
 	var IntroScreen = React.createClass({
@@ -259,34 +298,64 @@
 				'div',
 				null,
 				React.createElement(
+					'h4',
+					null,
+					'Project Name:'
+				),
+				React.createElement(
 					'div',
 					null,
-					'Project Name: ',
 					project.projectName
 				),
 				React.createElement(
+					'h4',
+					null,
+					'Hackathon:'
+				),
+				React.createElement(
 					'div',
 					null,
-					'Hackathon: ',
 					project.hackathon
 				),
 				React.createElement(
-					'div',
+					'h4',
 					null,
-					'Hours: ',
-					project.time
+					'Location:'
 				),
 				React.createElement(
 					'div',
 					null,
-					'Location: ',
 					project.location
 				),
 				React.createElement(
+					'h4',
+					null,
+					'Time:'
+				),
+				React.createElement(
 					'div',
 					null,
-					'About: ',
+					project.time
+				),
+				React.createElement(
+					'h4',
+					null,
+					'Description:'
+				),
+				React.createElement(
+					'div',
+					null,
 					project.description
+				),
+				React.createElement(
+					'h4',
+					null,
+					'Links'
+				),
+				React.createElement(
+					'div',
+					null,
+					project.link
 				)
 			) : React.createElement(
 				'div',
@@ -304,7 +373,7 @@
 				null,
 				React.createElement(
 					'div',
-					{ className: 'container' },
+					{ className: 'container-fluid' },
 					React.createElement(
 						'div',
 						{ className: 'row' },
@@ -331,7 +400,7 @@
 									'div',
 									{ className: 'row', key: i },
 									hacks.map(function (proj, j) {
-										return React.createElement(PortfolioSquare, { data: proj, onClick: this.handleClick.bind(this, proj, true) });
+										return React.createElement(PortfolioSquare, { key: j, data: proj, onClick: this.handleClick.bind(this, proj, true) });
 									}, this)
 								);
 							}, this),
@@ -349,7 +418,7 @@
 									'div',
 									{ className: 'row', key: i },
 									personal.map(function (proj, j) {
-										return React.createElement(PortfolioSquare, { data: proj, onClick: this.handleClick.bind(this, proj, false) });
+										return React.createElement(PortfolioSquare, { key: j, data: proj, onClick: this.handleClick.bind(this, proj, false) });
 									}, this)
 								);
 							}, this)
@@ -397,7 +466,7 @@
 				{ className: 'resume', id: 'resume' },
 				React.createElement(
 					'div',
-					{ className: 'container' },
+					{ className: 'container-fluid' },
 					React.createElement(
 						'h1',
 						null,
@@ -438,7 +507,7 @@
 				{ className: 'contact', id: 'contact' },
 				React.createElement(
 					'div',
-					{ className: 'container' },
+					{ className: 'container-fluid' },
 					React.createElement(
 						'h1',
 						null,
@@ -20615,7 +20684,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 200px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.4;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black; }\n\n.downloadIcon {\n  max-width: 100px; }\n\n.download {\n  text-align: center; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
+	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 200px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.4;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black; }\n\n.downloadIcon {\n  max-width: 100px; }\n\n.download {\n  text-align: center; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
 
 	// exports
 
@@ -20943,7 +21012,7 @@
 					"description": "Patients",
 					"builtWith": "nodeJs, Java, reactJs",
 					"image": "./abc",
-					"link": "devpost"
+					"link": "div"
 				},
 				{
 					"projectName": "TiN",

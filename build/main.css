@@ -28,6 +28,7 @@ body {
   height: auto; }
 
 .introFloatTitles {
+  font-weight: 200;
   display: inline; }
 
 .blurBack {
