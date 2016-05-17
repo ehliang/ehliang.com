@@ -199,11 +199,29 @@
 							),
 							React.createElement(
 								'h4',
-								{ className: 'about-section' },
-								'I\'m Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.',
-								React.createElement('br', null),
-								React.createElement('br', null),
-								'Looking for part-time opportunities.'
+								{ className: 'about-section-middle' },
+								'I\'m Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.'
+							),
+							React.createElement(
+								'h4',
+								{ className: 'about-section-middle' },
+								'Current resident of the ',
+								React.createElement(
+									'em',
+									null,
+									'Velocity Residence'
+								),
+								', Canada\'s largest free startup incubator. Exploring entrepenurship by creating a startup to bring data analytics product Gitalytics to market.'
+							),
+							React.createElement(
+								'h4',
+								{ className: 'about-section-middle' },
+								'Loves basketball, dogs, and long walks on the beach. '
+							),
+							React.createElement(
+								'h4',
+								{ className: 'about-section-end' },
+								'Currently looking for software internship opportunities.'
 							)
 						)
 					)
@@ -240,7 +258,7 @@
 					),
 					React.createElement(
 						'a',
-						{ className: 'introFloatTitle', href: 'https://github.com/ehliang' },
+						{ className: 'introFloatTitleLink', href: 'https://github.com/ehliang' },
 						'GitHub'
 					),
 					React.createElement(
@@ -250,9 +268,10 @@
 					),
 					React.createElement(
 						'a',
-						{ className: 'introFloatTitle', href: 'https://www.linkedin.com/in/ehliang' },
-						'LinkedIn.'
-					)
+						{ className: 'introFloatTitleLink', href: 'https://www.linkedin.com/in/ehliang' },
+						'LinkedIn'
+					),
+					'.'
 				)
 			);
 		}
@@ -386,11 +405,57 @@
 				'div',
 				null,
 				React.createElement(
+					'h4',
+					null,
+					'Project Name:'
+				),
+				React.createElement(
 					'div',
 					null,
-					'Project Name: ',
 					project.projectName
-				)
+				),
+				React.createElement(
+					'h4',
+					null,
+					'Description:'
+				),
+				React.createElement(
+					'div',
+					null,
+					project.description
+				),
+				React.createElement(
+					'h4',
+					null,
+					'Built With:'
+				),
+				project.builtWith.map(function (built, i) {
+					return React.createElement(
+						'button',
+						{ key: i, className: 'btn-static' },
+						built.tech
+					);
+				}, this),
+				React.createElement(
+					'h4',
+					null,
+					'Links'
+				),
+				project.link.map(function (link, i) {
+					return React.createElement(
+						'div',
+						{ key: i },
+						React.createElement(
+							'a',
+							{ href: link.link },
+							React.createElement(
+								'h5',
+								null,
+								link.linkName
+							)
+						)
+					);
+				}, this)
 			);
 
 			return React.createElement(
@@ -453,13 +518,17 @@
 						),
 						React.createElement(
 							'div',
-							{ className: 'col-xs-4 pro' },
+							{ className: 'col-xs-4' },
 							React.createElement(
-								'h1',
-								null,
-								'Info'
-							),
-							infoText
+								'div',
+								{ className: 'row' },
+								React.createElement(
+									'h1',
+									null,
+									'Info'
+								),
+								infoText
+							)
 						)
 					)
 				)
@@ -480,7 +549,7 @@
 					{ className: 'panel-body portfolio-square' },
 					React.createElement('img', { className: 'square-image', src: this.props.data.image }),
 					React.createElement(
-						'h5',
+						'h4',
 						null,
 						this.props.data.projectName
 					)
@@ -542,13 +611,13 @@
 					'div',
 					{ className: 'container-fluid' },
 					React.createElement(
+						'h1',
+						null,
+						'Contact Me'
+					),
+					React.createElement(
 						'div',
 						{ className: 'contact-section' },
-						React.createElement(
-							'h1',
-							null,
-							'Contact Me'
-						),
 						React.createElement(
 							'form',
 							null,
@@ -20721,7 +20790,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 250px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.3;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black; }\n\n.downloadIcon {\n  max-width: 100px;\n  margin-top: 80px; }\n\n.download {\n  text-align: center;\n  margin-bottom: 100px; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n.btn-static {\n  display: inline;\n  background-color: white;\n  border: 1px solid;\n  cursor: default; }\n\n.about-section {\n  margin-left: 38px;\n  margin-right: 38px;\n  margin-bottom: 5%; }\n\n.project-section {\n  margin-left: 50px; }\n\n.info-section {\n  margin-right: 50px; }\n\n.contact-section {\n  margin-left: 38px;\n  margin-right: 38px; }\n\n.square-image {\n  max-height: 150px; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
+	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.introFloatTitleLink {\n  font-weight: 200;\n  color: black;\n  text-decoration: underline; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 250px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.3;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black;\n  margin-bottom: 50px; }\n\n.downloadIcon {\n  max-width: 100px;\n  margin-top: 50px; }\n\n.download {\n  text-align: center;\n  margin-bottom: 70px; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n.btn-static {\n  display: inline;\n  background-color: white;\n  border: 1px solid;\n  cursor: default; }\n\n.about-section-middle {\n  margin-left: 38px;\n  margin-right: 38px;\n  margin-bottom: 2%; }\n\n.about-section-end {\n  margin-left: 38px;\n  margin-right: 38px;\n  margin-bottom: 5%; }\n\n.project-section {\n  margin-left: 50px;\n  margin-right: 25px; }\n\n.info-section {\n  margin-right: 50px; }\n\n.contact-section {\n  margin-left: 38px;\n  margin-right: 38px; }\n\n.square-image {\n  max-height: 125px; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
 
 	// exports
 
@@ -21046,7 +21115,7 @@
 					"hackathon": "NordicIOT Hackathon (2016)",
 					"location": "Malmö, Sweden",
 					"time": "48h",
-					"description": "Having been sponsored ",
+					"description": "Health",
 					"image": "src/img/icons/Nordic.png",
 					"link": [
 						{
@@ -21056,10 +21125,28 @@
 					],
 					"builtWith": [
 						{
+							"tech": "Android Java"
+						},
+						{
+							"tech": "Android Wear Java"
+						},
+						{
 							"tech": "node.js"
 						},
 						{
-							"tech": "AngularJS"
+							"tech": "webpack"
+						},
+						{
+							"tech": "Express"
+						},
+						{
+							"tech": "React"
+						},
+						{
+							"tech": "Bootstrap"
+						},
+						{
+							"tech": "socket.io"
 						}
 					]
 				},
@@ -21082,8 +21169,25 @@
 					],
 					"builtWith": [
 						{
-							"a": "node.js",
-							"b": "AngularJS"
+							"tech": "Android Java"
+						},
+						{
+							"tech": "node.js"
+						},
+						{
+							"tech": "Firebase"
+						},
+						{
+							"tech": "Twilio API"
+						},
+						{
+							"tech": "Google Maps API"
+						},
+						{
+							"tech": "Google Places Nearby API"
+						},
+						{
+							"tech": "Google Dimensions Matrix"
 						}
 					]
 				},
@@ -21106,8 +21210,19 @@
 					],
 					"builtWith": [
 						{
-							"a": "node.js",
-							"b": "AngularJS"
+							"tech": "Android Java"
+						},
+						{
+							"tech": "ZXING API"
+						},
+						{
+							"tech": "Capital One Nessie API"
+						},
+						{
+							"tech": "Arduino"
+						},
+						{
+							"tech": "NFC Shield"
 						}
 					]
 				},
@@ -21130,8 +21245,16 @@
 					],
 					"builtWith": [
 						{
-							"a": "node.js",
-							"b": "AngularJS"
+							"tech": "C#"
+						},
+						{
+							"tech": "Unity"
+						},
+						{
+							"tech": "Oculus Rift"
+						},
+						{
+							"tech": "Leap Motion"
 						}
 					]
 				},
@@ -21154,8 +21277,10 @@
 					],
 					"builtWith": [
 						{
-							"a": "node.js",
-							"b": "AngularJS"
+							"tech": "Python"
+						},
+						{
+							"tech": "myo armband"
 						}
 					]
 				}
@@ -21163,38 +21288,136 @@
 			"personal": [
 				{
 					"projectName": "ehliang.com",
-					"description": "This website. Built completly from scratch.",
-					"builtWith": "nodejs",
-					"image": "./abc",
-					"link": "lol"
+					"description": "Website",
+					"image": "src/img/ehliang.png",
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/ehliang.com"
+						},
+						{
+							"linkName": "Recursion",
+							"link": "http://ehliang.com"
+						}
+					],
+					"builtWith": [
+						{
+							"tech": "React"
+						},
+						{
+							"tech": "webpack"
+						},
+						{
+							"tech": "Bootstrap"
+						},
+						{
+							"tech": "SASS"
+						},
+						{
+							"tech": "Google Analytics"
+						},
+						{
+							"tech": "Google ReCaptcha"
+						}
+					]
 				},
 				{
 					"projectName": "Gitalytics",
-					"description": "This website. Built completly from scratch.",
-					"builtWith": "nodejs",
+					"description": "Analytics",
 					"image": "src/img/gitalytics.png",
-					"link": "lol"
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/Gitalytics"
+						}
+					],
+					"builtWith": [
+						{
+							"tech": "node.js"
+						},
+						{
+							"tech": "Express"
+						},
+						{
+							"tech": "React"
+						},
+						{
+							"tech": "GitHub API"
+						},
+						{
+							"tech": "OAuth 2"
+						}
+					]
 				},
 				{
 					"projectName": "LaunchPad Controller",
-					"description": "This website. Built completly from scratch.",
-					"builtWith": "nodejs",
-					"image": "./abc",
-					"link": "lol"
+					"description": "LED",
+					"image": "src/img/energia.png",
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/LaunchPadDimming"
+						},
+						{
+							"linkName": "YouTube",
+							"link": "https://youtu.be/UL-QoU3faXQ"
+						}
+					],
+					"builtWith": [
+						{
+							"tech": "C"
+						},
+						{
+							"tech": "Processing 3"
+						},
+						{
+							"tech": "LaunchPad MSP430"
+						},
+						{
+							"tech": "Minim Library"
+						}
+					]
 				},
 				{
 					"projectName": "RaspPiGoodMorning",
-					"description": "This website. Built completly from scratch.",
-					"builtWith": "nodejs",
-					"image": "./abc",
-					"link": "lol"
+					"description": "Waker",
+					"image": "src/img/raspi.png",
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/RaspPiGoodMorning"
+						}
+					],
+					"builtWith": [
+						{
+							"tech": "node.js"
+						},
+						{
+							"tech": "AngularJS"
+						},
+						{
+							"tech": "libCEC library"
+						},
+						{
+							"tech": "Raspberry Pi"
+						}
+					]
 				},
 				{
 					"projectName": "vocem",
-					"description": "This website. Built completly from scratch.",
-					"builtWith": "nodejs",
-					"image": "./abc",
-					"link": "lol"
+					"description": "Recorder",
+					"image": "src/img/vocem.png",
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/vocem"
+						}
+					],
+					"builtWith": [
+						{
+							"tech": "Objective C"
+						}
+					]
 				}
 			]
 		}

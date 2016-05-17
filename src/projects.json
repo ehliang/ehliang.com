@@ -6,7 +6,7 @@
         "hackathon": "NordicIOT Hackathon (2016)",
         "location": "Malmö, Sweden",
         "time": "48h",
-        "description": "Having been sponsored ",
+        "description": "Health",
         "image": "src/img/icons/Nordic.png",
         "link": [
           {
@@ -16,10 +16,28 @@
         ],
         "builtWith": [
           {
+            "tech": "Android Java"
+          },
+          {
+            "tech": "Android Wear Java"
+          },
+          {
             "tech": "node.js"
           },
           {
-            "tech": "AngularJS"
+            "tech": "webpack"
+          },
+          {
+            "tech": "Express"
+          },
+          {
+            "tech": "React"
+          },
+          {
+            "tech": "Bootstrap"
+          },
+          {
+            "tech": "socket.io"
           }
         ]
       },
@@ -42,8 +60,25 @@
         ],
         "builtWith": [
           {
-            "a": "node.js",
-            "b": "AngularJS"
+            "tech": "Android Java"
+          },
+          {
+            "tech": "node.js"
+          },
+          {
+            "tech": "Firebase"
+          },
+          {
+            "tech": "Twilio API"
+          },
+          {
+            "tech": "Google Maps API"
+          },
+          {
+            "tech": "Google Places Nearby API"
+          },
+          {
+            "tech": "Google Dimensions Matrix"
           }
         ]
       },
@@ -66,8 +101,19 @@
         ],
         "builtWith": [
           {
-            "a": "node.js",
-            "b": "AngularJS"
+            "tech": "Android Java"
+          },
+          {
+            "tech": "ZXING API"
+          },
+          {
+            "tech": "Capital One Nessie API"
+          },
+          {
+            "tech": "Arduino"
+          },
+          {
+            "tech": "NFC Shield"
           }
         ]
       },
@@ -90,8 +136,16 @@
         ],
         "builtWith": [
           {
-            "a": "node.js",
-            "b": "AngularJS"
+            "tech": "C#"
+          },
+          {
+            "tech": "Unity"
+          },
+          {
+            "tech": "Oculus Rift"
+          },
+          {
+            "tech": "Leap Motion"
           }
         ]
       },
@@ -114,8 +168,10 @@
         ],
         "builtWith": [
           {
-            "a": "node.js",
-            "b": "AngularJS"
+            "tech": "Python"
+          },
+          {
+            "tech": "myo armband"
           }
         ]
       }
@@ -123,38 +179,136 @@
     "personal": [
       {
         "projectName": "ehliang.com",
-        "description": "This website. Built completly from scratch.",
-        "builtWith": "nodejs",
-        "image": "./abc",
-        "link": "lol"
+        "description": "Website",
+        "image": "src/img/ehliang.png",
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/ehliang.com"
+          },
+          {
+            "linkName": "Recursion",
+            "link": "http://ehliang.com"
+          }
+        ],
+        "builtWith": [
+          {
+            "tech": "React"
+          },
+          {
+            "tech": "webpack"
+          },
+          {
+            "tech": "Bootstrap"
+          },
+          {
+            "tech": "SASS"
+          },
+          {
+            "tech": "Google Analytics"
+          },
+          {
+            "tech": "Google ReCaptcha"
+          }
+        ]
       },
       {
         "projectName": "Gitalytics",
-        "description": "This website. Built completly from scratch.",
-        "builtWith": "nodejs",
+        "description": "Analytics",
         "image": "src/img/gitalytics.png",
-        "link": "lol"
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/Gitalytics"
+          }
+        ],
+        "builtWith": [
+          {
+            "tech": "node.js"
+          },
+          {
+            "tech": "Express"
+          },
+          {
+            "tech": "React"
+          },
+          {
+            "tech": "GitHub API"
+          },
+          {
+            "tech": "OAuth 2"
+          }
+        ]
       },
       {
         "projectName": "LaunchPad Controller",
-        "description": "This website. Built completly from scratch.",
-        "builtWith": "nodejs",
-        "image": "./abc",
-        "link": "lol"
+        "description": "LED",
+        "image": "src/img/energia.png",
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/LaunchPadDimming"
+          },
+          {
+            "linkName": "YouTube",
+            "link": "https://youtu.be/UL-QoU3faXQ"
+          }
+        ],
+        "builtWith": [
+          {
+            "tech": "C"
+          },
+          {
+            "tech": "Processing 3"
+          },
+          {
+            "tech": "LaunchPad MSP430"
+          },
+          {
+            "tech": "Minim Library"
+          }
+        ]
       },
       {
         "projectName": "RaspPiGoodMorning",
-        "description": "This website. Built completly from scratch.",
-        "builtWith": "nodejs",
-        "image": "./abc",
-        "link": "lol"
+        "description": "Waker",
+        "image": "src/img/raspi.png",
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/RaspPiGoodMorning"
+          }
+        ],
+        "builtWith": [
+          {
+            "tech": "node.js"
+          },
+          {
+            "tech": "AngularJS"
+          },
+          {
+            "tech": "libCEC library"
+          },
+          {
+            "tech": "Raspberry Pi"
+          }
+        ]
       },
       {
         "projectName": "vocem",
-        "description": "This website. Built completly from scratch.",
-        "builtWith": "nodejs",
-        "image": "./abc",
-        "link": "lol"
+        "description": "Recorder",
+        "image": "src/img/vocem.png",
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/vocem"
+          }
+        ],
+        "builtWith": [
+          {
+            "tech": "Objective C"
+          }
+        ]
       }
     ]
   }

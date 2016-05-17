@@ -23,6 +23,12 @@ body {
 	color: black; 
 }
 
+.introFloatTitleLink{
+	font-weight: 200;  
+	color: black; 
+	text-decoration: underline;
+}
+
 .linkBlock{
 	margin-top:20em; 
 	display:inline;
@@ -80,16 +86,17 @@ header {
 	text-align:left; 
 	background: white;
 	color: black; 
+	margin-bottom:50px; 
 }
 
 .downloadIcon{
 	max-width:100px; 
-	margin-top:80px; 
+	margin-top:50px; 
 }
 
 .download{
 	text-align:center; 
-	margin-bottom:100px; 
+	margin-bottom:70px; 
 }
 
 .panel-default:hover{
@@ -110,7 +117,13 @@ header {
   cursor: default;
 }
 
-.about-section{
+.about-section-middle{
+	margin-left:38px;
+	margin-right: 38px; 
+	margin-bottom:2%; 
+}
+
+.about-section-end{
 	margin-left:38px;
 	margin-right: 38px; 
 	margin-bottom:5%; 
@@ -118,6 +131,7 @@ header {
 
 .project-section{
 	margin-left: 50px; 
+	margin-right: 25px; 
 }
 .info-section{
 	margin-right:50px; 
@@ -127,7 +141,7 @@ header {
 	margin-right:38px; 
 }
 .square-image{
-	max-height:150px; 
+	max-height:125px; 
 }
 
 

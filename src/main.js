@@ -101,7 +101,10 @@ var About = React.createClass({
 		            <div className="row">
 		                <div className="col-xs-12">
 		                		<h1> About Me</h1>
-		                		<h4 className="about-section">I'm Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.<br/><br/>Looking for part-time opportunities.</h4>
+		                		<h4 className="about-section-middle">I'm Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.</h4>
+		                		<h4 className="about-section-middle">Current resident of the <em>Velocity Residence</em>, Canada's largest free startup incubator. Exploring entrepenurship by creating a startup to bring data analytics product Gitalytics to market.</h4>
+		                		<h4 className="about-section-middle">Loves basketball, dogs, and long walks on the beach. </h4>
+		                		<h4 className="about-section-end">Currently looking for software internship opportunities.</h4>
 		                </div>
 		            </div>
 		        </div>
@@ -122,9 +125,10 @@ var IntroScreen = React.createClass({
 				<h3 className="introFloatTitle">Developer, Designer, Entrepreneur.</h3>
 				<h5 className="introFloatTitles">Check me out on </h5>
 
-				<a className="introFloatTitle" href="https://github.com/ehliang">GitHub</a> 
+				<a className="introFloatTitleLink" href="https://github.com/ehliang">GitHub</a> 
 				<h5 className="introFloatTitles"> and </h5>
-				<a className="introFloatTitle" href="https://www.linkedin.com/in/ehliang">LinkedIn.</a> 
+				<a className="introFloatTitleLink" href="https://www.linkedin.com/in/ehliang">LinkedIn</a>
+				. 
 				</div>
 			</div> 
 
@@ -204,7 +208,22 @@ var Portfolio = React.createClass({
 
 		</div>:
 		<div>
-			<div>Project Name: {project.projectName}</div>
+			<h4>Project Name:</h4>
+			<div>{project.projectName}</div>
+			<h4>Description:</h4>
+			<div>{project.description}</div>
+			<h4>Built With:</h4>
+
+			{project.builtWith.map(function(built,i){
+				return(<button key={i} className="btn-static">{built.tech}</button> ); 
+
+			}, this)}
+
+			<h4>Links</h4>
+			{project.link.map(function(link,i){
+				return(<div key={i}><a href={link.link}><h5>{link.linkName}</h5></a></div> ); 
+
+			}, this)}
 
 		</div>);
 
@@ -238,9 +257,11 @@ var Portfolio = React.createClass({
 
 							</div> 
 					</div>
-					<div className="col-xs-4 pro">
+					<div className="col-xs-4">
+					<div className="row">
 						<h1>Info</h1>
 						{infoText}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -260,7 +281,7 @@ var PortfolioSquare = React.createClass({
 			<div className="col-xs-4 panel panel-default" onClick={this.props.onClick}> 
 				<div className="panel-body portfolio-square">
 				<img className="square-image" src={this.props.data.image}/>
-				<h5>{this.props.data.projectName}</h5>
+				<h4>{this.props.data.projectName}</h4>
 				</div>
 			</div> 
 		); 
@@ -303,8 +324,9 @@ var Contact = React.createClass({
 		return (
 			<section className="contact" id="contact">
 			<div className="container-fluid">
+						<h1>Contact Me</h1>
 			<div className="contact-section"> 
-			<h1>Contact Me</h1>
+
 			<form>
 
 			<fieldset className="form-group">
