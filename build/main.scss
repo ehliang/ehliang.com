@@ -117,31 +117,44 @@ header {
   cursor: default;
 }
 
+.about-section-beginning{
+	margin-left:48px;
+	margin-right: 48px; 
+	margin-top:3%; 
+}
+
 .about-section-middle{
-	margin-left:38px;
-	margin-right: 38px; 
+	margin-left:48px;
+	margin-right: 48px; 
 	margin-bottom:2%; 
 }
 
 .about-section-end{
-	margin-left:38px;
+	margin-left:48px;
 	margin-right: 38px; 
 	margin-bottom:5%; 
 }
 
 .project-section{
-	margin-left: 50px; 
+	margin-left: 60px; 
 	margin-right: 25px; 
 }
 .info-section{
-	margin-right:50px; 
+	margin-right:60px; 
 }
 .contact-section{
-	margin-left: 38px; 
-	margin-right:38px; 
+	margin-left: 48px; 
+	margin-right:48px; 
 }
 .square-image{
 	max-height:125px; 
 }
-
-
+.nav-link{
+	font-size:20px; 
+}
+.navbar-brand{
+	font-size:20px;
+}
+.about-me-section{
+	margin-bottom:30px; 
+}

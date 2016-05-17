@@ -100,6 +100,7 @@
 	var Navbar = React.createClass({
 		displayName: 'Navbar',
 
+
 		render: function () {
 			return React.createElement(
 				'nav',
@@ -118,12 +119,7 @@
 						React.createElement(
 							'a',
 							{ className: 'nav-link', href: '#about' },
-							'About Me',
-							React.createElement(
-								'span',
-								{ className: 'sr-only' },
-								'(current)'
-							)
+							'About Me'
 						)
 					),
 					React.createElement(
@@ -199,7 +195,7 @@
 							),
 							React.createElement(
 								'h4',
-								{ className: 'about-section-middle' },
+								{ className: 'about-section-beginning' },
 								'I\'m Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.'
 							),
 							React.createElement(
@@ -216,7 +212,7 @@
 							React.createElement(
 								'h4',
 								{ className: 'about-section-middle' },
-								'Loves basketball, dogs, and long walks on the beach. '
+								'Loves planes, basketball, dogs, and long walks on the beach. '
 							),
 							React.createElement(
 								'h4',
@@ -460,7 +456,7 @@
 
 			return React.createElement(
 				'section',
-				null,
+				{ className: 'about-me-section' },
 				React.createElement(
 					'div',
 					{ className: 'container-fluid' },
@@ -20790,7 +20786,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.introFloatTitleLink {\n  font-weight: 200;\n  color: black;\n  text-decoration: underline; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 250px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.3;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black;\n  margin-bottom: 50px; }\n\n.downloadIcon {\n  max-width: 100px;\n  margin-top: 50px; }\n\n.download {\n  text-align: center;\n  margin-bottom: 70px; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n.btn-static {\n  display: inline;\n  background-color: white;\n  border: 1px solid;\n  cursor: default; }\n\n.about-section-middle {\n  margin-left: 38px;\n  margin-right: 38px;\n  margin-bottom: 2%; }\n\n.about-section-end {\n  margin-left: 38px;\n  margin-right: 38px;\n  margin-bottom: 5%; }\n\n.project-section {\n  margin-left: 50px;\n  margin-right: 25px; }\n\n.info-section {\n  margin-right: 50px; }\n\n.contact-section {\n  margin-left: 38px;\n  margin-right: 38px; }\n\n.square-image {\n  max-height: 125px; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
+	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.introFloatTitleLink {\n  font-weight: 200;\n  color: black;\n  text-decoration: underline; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 250px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.3;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black;\n  margin-bottom: 50px; }\n\n.downloadIcon {\n  max-width: 100px;\n  margin-top: 50px; }\n\n.download {\n  text-align: center;\n  margin-bottom: 70px; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n.btn-static {\n  display: inline;\n  background-color: white;\n  border: 1px solid;\n  cursor: default; }\n\n.about-section-beginning {\n  margin-left: 48px;\n  margin-right: 48px;\n  margin-top: 3%; }\n\n.about-section-middle {\n  margin-left: 48px;\n  margin-right: 48px;\n  margin-bottom: 2%; }\n\n.about-section-end {\n  margin-left: 48px;\n  margin-right: 38px;\n  margin-bottom: 5%; }\n\n.project-section {\n  margin-left: 60px;\n  margin-right: 25px; }\n\n.info-section {\n  margin-right: 60px; }\n\n.contact-section {\n  margin-left: 48px;\n  margin-right: 48px; }\n\n.square-image {\n  max-height: 125px; }\n\n.nav-link {\n  font-size: 20px; }\n\n.navbar-brand {\n  font-size: 20px; }\n\n.about-me-section {\n  margin-bottom: 30px; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
 
 	// exports
 
@@ -21115,7 +21111,7 @@
 					"hackathon": "NordicIOT Hackathon (2016)",
 					"location": "Malmö, Sweden",
 					"time": "48h",
-					"description": "Health",
+					"description": "Having been invited to Sweden for the Nordic Internet of Things hacakthon, we were tasked with a choice of two problems to address: Intelligent Healthcare and Intelligent Buildings. We chose healthcare and developed a platform which would reduce the amount of monitoring nurses need to make for post-operation patients. dCharge makes use of the Moto 360 watch to take periodic records of a patient's heart rate and monitor sudden spikes and drops. Periodic checkups will pe provided to the patient and ask them questions regarding specific elements of their well-being. Questions are tailored to the condition of the patient and provide insight for the doctor. If patients have additional concerns, they can record to their watch and the doctors have access to the logs through their React webpanel. The watch communicates with the phone and the phone communicates with our server using socket.io.",
 					"image": "src/img/icons/Nordic.png",
 					"link": [
 						{
@@ -21155,7 +21151,7 @@
 					"hackathon": "MHacks: Refactor (2016)",
 					"location": "University of Michigan, Ann Arbor",
 					"time": "36h",
-					"description": "Travellers",
+					"description": "Travellers often find themselves in foreign countries and commonly travel in groups. When split apart, finding one another is difficult, especially if the place is foreign and you don't know any landmarks. Some of us use Google Maps, but as every jetsetter knows, data plans are expensive. However, text plans are not. With the our Android App, users report their location and send their coordinates through SMS on Twilio and uploads to Firebase. Our node.js server monitors for changes and uses the Google Dimensions Matrix and Google Places API to locate the closest public location between two users. Whether its a coffee shop or a park, it provides directions for both users to arrive at the location.",
 					"image": "src/img/icons/Mhacks.png",
 					"link": [
 						{
@@ -21196,7 +21192,7 @@
 					"hackathon": "PennApps XIII (2016)",
 					"location": "University of Pennsylvania, Philadelphia",
 					"time": "36h",
-					"description": "Shopping",
+					"description": "Winner of the Capital One Nessie API Prize. Even with the rise of self-checkouts, there's still a lot of hassle. Everyone still has to line up to check out. What we developed with XpressCart is an Android application which allows for self-checkout by using your own smartphone. By employing the ZXING API, customers scan their items and place them into our Ardino-embedded shopping cart. The app sends an expected value to the Arduino through the NFC shield and the Ardunio validates this with what is measured on the scale. When it comes to checkout, patrons use the Nessie API to submit a direct payment from their bank account and generate a receipt. Merchants can customize the same base app template.",
 					"image": "src/img/icons/Penn.png",
 					"link": [
 						{
@@ -21231,7 +21227,7 @@
 					"hackathon": "Deltahacks II (2016)",
 					"location": "McMaster University, Hamilton",
 					"time": "24h",
-					"description": "Kids",
+					"description": "With the rise of Virtual Reality, the next generation of children will likely be raised with its availability. Therefore, to streamline their integration and knowledge of the virtual world, we developed LeapStacks. LeapStacks is a C# Unity application which allowd for the generation of multicoloured blocks that are physically placeable. Kids can use them like legos through the LEAP motion controller and make their own structures without physical constraints. The alternative game mode is a shape-in-hole playboard to grasp finer motor skills. Rendered on the Rift.",
 					"image": "src/img/icons/delta.png",
 					"link": [
 						{
@@ -21263,7 +21259,7 @@
 					"hackathon": "Waterloo Tech Retreat (2015)",
 					"location": "University of Waterloo, Waterloo",
 					"time": "12h",
-					"description": "Security",
+					"description": "First project done at a hackathon. The point of myo-unlock was to make the authentication process easier. We currently run the risky choice between having a forgettable password or an insecure one. For many people, their alphanumeric memory doesn't come close to their muscle memory which is why I wanted to adopt the myo armband as an alternative authentication method. By performing a series of gestures, our python program converts these motions into a long random character string. This is then used to authenticate and log the user in on GMail.",
 					"image": "src/img/icons/tech retreat.png",
 					"link": [
 						{
@@ -21288,7 +21284,7 @@
 			"personal": [
 				{
 					"projectName": "ehliang.com",
-					"description": "Website",
+					"description": "This website. Personal website made without a template to further explore React. Uses webpack-compressed React and SASS on the frontend. Wrote code to dynamically take projects data from a json file and generate portfolio squares, allowing easy addition of future projects.",
 					"image": "src/img/ehliang.png",
 					"link": [
 						{
@@ -21323,7 +21319,7 @@
 				},
 				{
 					"projectName": "Gitalytics",
-					"description": "Analytics",
+					"description": "Project currently being developed in Velocity. Having spoken to multiple tech recruiters, there was the rising problem of coders being less qualified than indicated. Many developers put their projects on GitHub but no accurate assessments can be made. There are instances of people not contributing to group projects or filling templates in and not generating real code. We wanted to catch these coders and find good ones so we created Gitalytics. This analyzes contributions to open source code and true work done on projects to generate a score for candidates. This score provides a more universal metric for employers to assess on and allows them to find good candidates.",
 					"image": "src/img/gitalytics.png",
 					"link": [
 						{
@@ -21351,7 +21347,7 @@
 				},
 				{
 					"projectName": "LaunchPad Controller",
-					"description": "LED",
+					"description": "I received some LED strips to put in my Desktop computer but didn't have a good way to turn them on or off. With that in mind, I built my own LED controller using the Launchpad MSP430 board I had lying around. It connects to a USB header for serial data and stores whichever mode it was on to flash memory. I included a beat detect mode for funsies using the Minim library.",
 					"image": "src/img/energia.png",
 					"link": [
 						{
@@ -21380,7 +21376,7 @@
 				},
 				{
 					"projectName": "RaspPiGoodMorning",
-					"description": "Waker",
+					"description": "Having been inspired by the Raspberry Pi magic mirrors, I wanted to create something for my Raspberry Pi that would wake me up in the mornings, show me the weather and my agenda when I leave for school and give me the top news articles. Runs on a node.js server and wakes up the connected display using the libCEC library. Currenly only displays weather.",
 					"image": "src/img/raspi.png",
 					"link": [
 						{
@@ -21405,7 +21401,7 @@
 				},
 				{
 					"projectName": "vocem",
-					"description": "Recorder",
+					"description": "The application was designed to do recordings of conversations and cut out sections of silence for smoother playback. Unfortunately, the mainpulation of recordings proved rather difficult. The project is currently on hold.",
 					"image": "src/img/vocem.png",
 					"link": [
 						{

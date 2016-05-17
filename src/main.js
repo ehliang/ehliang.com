@@ -64,13 +64,14 @@ var Content = React.createClass({
 });
 
 var Navbar = React.createClass({
+
 	render: function(){
 		return(
 		<nav className="navbar navbar-default">
 		  <a className="navbar-brand" href="#">Ethan Liang</a>
 		  <ul className="nav navbar-nav">
 		    <li className="nav-item">
-		      <a className="nav-link" href="#about">About Me<span className="sr-only">(current)</span></a>
+		      <a className="nav-link" href="#about">About Me</a>
 		    </li>
 		    <li className="nav-item">
 		      <a className="nav-link" href="#projects">Projects</a>
@@ -101,9 +102,9 @@ var About = React.createClass({
 		            <div className="row">
 		                <div className="col-xs-12">
 		                		<h1> About Me</h1>
-		                		<h4 className="about-section-middle">I'm Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.</h4>
+		                		<h4 className="about-section-beginning">I'm Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.</h4>
 		                		<h4 className="about-section-middle">Current resident of the <em>Velocity Residence</em>, Canada's largest free startup incubator. Exploring entrepenurship by creating a startup to bring data analytics product Gitalytics to market.</h4>
-		                		<h4 className="about-section-middle">Loves basketball, dogs, and long walks on the beach. </h4>
+		                		<h4 className="about-section-middle">Loves planes, basketball, dogs, and long walks on the beach. </h4>
 		                		<h4 className="about-section-end">Currently looking for software internship opportunities.</h4>
 		                </div>
 		            </div>
@@ -228,7 +229,7 @@ var Portfolio = React.createClass({
 		</div>);
 
 		return (
-			<section> 
+			<section className="about-me-section"> 
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col-xs-8">
