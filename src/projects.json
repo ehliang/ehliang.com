@@ -7,7 +7,7 @@
         "location": "Malmö, Sweden",
         "time": "48h",
         "description": "Having been sponsored ",
-        "image": "./abc",
+        "image": "src/img/icons/Nordic.png",
         "link": [
           {
             "linkName": "GitHub",
@@ -29,7 +29,7 @@
         "location": "University of Michigan, Ann Arbor",
         "time": "36h",
         "description": "Travellers",
-        "image": "./abc",
+        "image": "src/img/icons/Mhacks.png",
         "link": [
           {
             "linkName": "GitHub",
@@ -53,7 +53,7 @@
         "location": "University of Pennsylvania, Philadelphia",
         "time": "36h",
         "description": "Shopping",
-        "image": "./abc",
+        "image": "src/img/icons/Penn.png",
         "link": [
           {
             "linkName": "GitHub",
@@ -77,7 +77,7 @@
         "location": "McMaster University, Hamilton",
         "time": "24h",
         "description": "Kids",
-        "image": "./abc",
+        "image": "src/img/icons/delta.png",
         "link": [
           {
             "linkName": "GitHub",
@@ -101,7 +101,7 @@
         "location": "University of Waterloo, Waterloo",
         "time": "12h",
         "description": "Security",
-        "image": "./abc",
+        "image": "src/img/icons/tech retreat.png",
         "link": [
           {
             "linkName": "GitHub",
@@ -132,7 +132,7 @@
         "projectName": "Gitalytics",
         "description": "This website. Built completly from scratch.",
         "builtWith": "nodejs",
-        "image": "./abc",
+        "image": "src/img/gitalytics.png",
         "link": "lol"
       },
       {

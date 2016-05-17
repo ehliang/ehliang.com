@@ -45,7 +45,6 @@ var Content = React.createClass({
 		return (
 		<div>
 
-
 	<Navbar/>
 
 	<About/>
@@ -67,10 +66,10 @@ var Content = React.createClass({
 var Navbar = React.createClass({
 	render: function(){
 		return(
-		<nav className="navbar navbar-dark">
+		<nav className="navbar navbar-default">
 		  <a className="navbar-brand" href="#">Ethan Liang</a>
 		  <ul className="nav navbar-nav">
-		    <li className="nav-item active">
+		    <li className="nav-item">
 		      <a className="nav-link" href="#about">About Me<span className="sr-only">(current)</span></a>
 		    </li>
 		    <li className="nav-item">
@@ -100,9 +99,9 @@ var About = React.createClass({
 			<header>
 		        <div className="container-fluid">
 		            <div className="row">
-		                <div className="col-lg-12">
+		                <div className="col-xs-12">
 		                		<h1> About Me</h1>
-		                		<h4>I'm Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning. Looking for part-time opportunities.</h4>
+		                		<h4 className="about-section">I'm Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.<br/><br/>Looking for part-time opportunities.</h4>
 		                </div>
 		            </div>
 		        </div>
@@ -118,7 +117,7 @@ var IntroScreen = React.createClass({
 
 			<div className="introFloat">
 			<div className="intro-block">
-				<img className="profilePic" src="src/img/globe.png"/>
+				<img className="profilePic" src="src/img/profile_circle.png"/>
 				<h1 className="introFloatTitle">Hey, I'm Ethan Liang.</h1>
 				<h3 className="introFloatTitle">Developer, Designer, Entrepreneur.</h3>
 				<h5 className="introFloatTitles">Check me out on </h5>
@@ -193,7 +192,7 @@ var Portfolio = React.createClass({
 			<h4>Built With:</h4>
 
 			{project.builtWith.map(function(built,i){
-				return(<div key={i} className="btn-static">{built.tech}</div> ); 
+				return(<button key={i} className="btn-static">{built.tech}</button> ); 
 
 			}, this)}
 
@@ -212,39 +211,40 @@ var Portfolio = React.createClass({
 		return (
 			<section> 
 			<div className="container-fluid">
-			<div className="row">
-				<div className="col-md-8">
-				<h1>Projects</h1>
 				<div className="row">
-				<h3>Hackathons</h3>
-				</div>
-				{hackProjects.map(function(hacks, i){
+					<div className="col-xs-8">
+						<h1>Projects</h1>
+							<div className="project-section">
+								<div className="row">
+									<h3>Hackathons</h3>
+								</div>
+								{hackProjects.map(function(hacks, i){
+									return(<div className="row" key={i}>
+										{hacks.map(function(proj,j){
+											return (<PortfolioSquare key={j} data={proj} onClick={this.handleClick.bind(this, proj, true)}/>);
+										}, this)}
+										</div>);
+								}, this)}
+								<div className="row">
+									<h3>Personal</h3>
+								</div>
+										{personalProjects.map(function(personal,i){
+												return(<div className="row" key={i}>
+													{personal.map(function(proj,j){
+														return (<PortfolioSquare key={j} data={proj} onClick={this.handleClick.bind(this, proj, false)}/>);
+													}, this)}
+													</div>);
+										}, this)}
 
-						return(<div className="row" key={i}>
-							{hacks.map(function(proj,j){
-								return (<PortfolioSquare key={j} data={proj} onClick={this.handleClick.bind(this, proj, true)}/>);
-							}, this)}
-							</div>);
-				}, this)}
-				<div className="row">
-				<h3>Personal</h3>
+							</div> 
+					</div>
+					<div className="col-xs-4 pro">
+						<h1>Info</h1>
+						{infoText}
+					</div>
 				</div>
-				{personalProjects.map(function(personal,i){
-						return(<div className="row" key={i}>
-							{personal.map(function(proj,j){
-								return (<PortfolioSquare key={j} data={proj} onClick={this.handleClick.bind(this, proj, false)}/>);
-							}, this)}
-							</div>);
-				}, this)}
-
-				</div> 
-				<div className="col-md-4">
-				<h1>Info</h1>
-				{infoText}
-				</div>
-				</div>
-				</div>
-			</section> 
+			</div>
+		</section> 
 
 			); 
 	}
@@ -257,9 +257,10 @@ var Portfolio = React.createClass({
 var PortfolioSquare = React.createClass({ 
 	render: function(){
 		return (
-			<div className="col-md-4 panel panel-default" onClick={this.props.onClick}> 
+			<div className="col-xs-4 panel panel-default" onClick={this.props.onClick}> 
 				<div className="panel-body portfolio-square">
-				{this.props.data.projectName} 
+				<img className="square-image" src={this.props.data.image}/>
+				<h5>{this.props.data.projectName}</h5>
 				</div>
 			</div> 
 		); 
@@ -302,6 +303,7 @@ var Contact = React.createClass({
 		return (
 			<section className="contact" id="contact">
 			<div className="container-fluid">
+			<div className="contact-section"> 
 			<h1>Contact Me</h1>
 			<form>
 
@@ -327,6 +329,7 @@ var Contact = React.createClass({
 
   			<button type="submit" value="submit" className="btn btn-primary">Submit</button>
 			</form>
+			</div>
 			</div>
 			</section>
 			);

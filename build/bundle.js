@@ -103,7 +103,7 @@
 		render: function () {
 			return React.createElement(
 				'nav',
-				{ className: 'navbar navbar-dark' },
+				{ className: 'navbar navbar-default' },
 				React.createElement(
 					'a',
 					{ className: 'navbar-brand', href: '#' },
@@ -114,7 +114,7 @@
 					{ className: 'nav navbar-nav' },
 					React.createElement(
 						'li',
-						{ className: 'nav-item active' },
+						{ className: 'nav-item' },
 						React.createElement(
 							'a',
 							{ className: 'nav-link', href: '#about' },
@@ -191,7 +191,7 @@
 						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'col-lg-12' },
+							{ className: 'col-xs-12' },
 							React.createElement(
 								'h1',
 								null,
@@ -199,8 +199,11 @@
 							),
 							React.createElement(
 								'h4',
-								null,
-								'I\'m Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning. Looking for part-time opportunities.'
+								{ className: 'about-section' },
+								'I\'m Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.',
+								React.createElement('br', null),
+								React.createElement('br', null),
+								'Looking for part-time opportunities.'
 							)
 						)
 					)
@@ -219,7 +222,7 @@
 				React.createElement(
 					'div',
 					{ className: 'intro-block' },
-					React.createElement('img', { className: 'profilePic', src: 'src/img/globe.png' }),
+					React.createElement('img', { className: 'profilePic', src: 'src/img/profile_circle.png' }),
 					React.createElement(
 						'h1',
 						{ className: 'introFloatTitle' },
@@ -354,7 +357,7 @@
 				),
 				project.builtWith.map(function (built, i) {
 					return React.createElement(
-						'div',
+						'button',
 						{ key: i, className: 'btn-static' },
 						built.tech
 					);
@@ -401,7 +404,7 @@
 						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'col-md-8' },
+							{ className: 'col-xs-8' },
 							React.createElement(
 								'h1',
 								null,
@@ -409,45 +412,48 @@
 							),
 							React.createElement(
 								'div',
-								{ className: 'row' },
+								{ className: 'project-section' },
 								React.createElement(
-									'h3',
-									null,
-									'Hackathons'
-								)
-							),
-							hackProjects.map(function (hacks, i) {
-
-								return React.createElement(
 									'div',
-									{ className: 'row', key: i },
-									hacks.map(function (proj, j) {
-										return React.createElement(PortfolioSquare, { key: j, data: proj, onClick: this.handleClick.bind(this, proj, true) });
-									}, this)
-								);
-							}, this),
-							React.createElement(
-								'div',
-								{ className: 'row' },
+									{ className: 'row' },
+									React.createElement(
+										'h3',
+										null,
+										'Hackathons'
+									)
+								),
+								hackProjects.map(function (hacks, i) {
+									return React.createElement(
+										'div',
+										{ className: 'row', key: i },
+										hacks.map(function (proj, j) {
+											return React.createElement(PortfolioSquare, { key: j, data: proj, onClick: this.handleClick.bind(this, proj, true) });
+										}, this)
+									);
+								}, this),
 								React.createElement(
-									'h3',
-									null,
-									'Personal'
-								)
-							),
-							personalProjects.map(function (personal, i) {
-								return React.createElement(
 									'div',
-									{ className: 'row', key: i },
-									personal.map(function (proj, j) {
-										return React.createElement(PortfolioSquare, { key: j, data: proj, onClick: this.handleClick.bind(this, proj, false) });
-									}, this)
-								);
-							}, this)
+									{ className: 'row' },
+									React.createElement(
+										'h3',
+										null,
+										'Personal'
+									)
+								),
+								personalProjects.map(function (personal, i) {
+									return React.createElement(
+										'div',
+										{ className: 'row', key: i },
+										personal.map(function (proj, j) {
+											return React.createElement(PortfolioSquare, { key: j, data: proj, onClick: this.handleClick.bind(this, proj, false) });
+										}, this)
+									);
+								}, this)
+							)
 						),
 						React.createElement(
 							'div',
-							{ className: 'col-md-4' },
+							{ className: 'col-xs-4 pro' },
 							React.createElement(
 								'h1',
 								null,
@@ -468,11 +474,16 @@
 		render: function () {
 			return React.createElement(
 				'div',
-				{ className: 'col-md-4 panel panel-default', onClick: this.props.onClick },
+				{ className: 'col-xs-4 panel panel-default', onClick: this.props.onClick },
 				React.createElement(
 					'div',
 					{ className: 'panel-body portfolio-square' },
-					this.props.data.projectName
+					React.createElement('img', { className: 'square-image', src: this.props.data.image }),
+					React.createElement(
+						'h5',
+						null,
+						this.props.data.projectName
+					)
 				)
 			);
 		}
@@ -531,46 +542,50 @@
 					'div',
 					{ className: 'container-fluid' },
 					React.createElement(
-						'h1',
-						null,
-						'Contact Me'
-					),
-					React.createElement(
-						'form',
-						null,
+						'div',
+						{ className: 'contact-section' },
 						React.createElement(
-							'fieldset',
-							{ className: 'form-group' },
-							React.createElement(
-								'label',
-								{ 'for': 'inputEmail' },
-								'Email address'
-							),
-							React.createElement('input', { type: 'email', className: 'form-control', id: 'inputEmail', placeholder: 'Enter email' })
+							'h1',
+							null,
+							'Contact Me'
 						),
 						React.createElement(
-							'fieldset',
-							{ className: 'form-group' },
+							'form',
+							null,
 							React.createElement(
-								'label',
-								{ 'for': 'textarea' },
-								'Message'
+								'fieldset',
+								{ className: 'form-group' },
+								React.createElement(
+									'label',
+									{ 'for': 'inputEmail' },
+									'Email address'
+								),
+								React.createElement('input', { type: 'email', className: 'form-control', id: 'inputEmail', placeholder: 'Enter email' })
 							),
-							React.createElement('textarea', { className: 'form-control', id: 'textarea', rows: '3', placeholder: 'Message' })
-						),
-						React.createElement(Recaptcha, {
-							sitekey: '6LcA8h8TAAAAAMf3AZfSM7aHZzCTBbg7Jx18wy8b',
-							size: 'normal',
-							render: 'explicit',
-							verifyCallback: this.verifyCallback,
-							onloadCallback: this.callback,
-							expiredCallback: this.expiredCallback
-						}),
-						React.createElement('br', null),
-						React.createElement(
-							'button',
-							{ type: 'submit', value: 'submit', className: 'btn btn-primary' },
-							'Submit'
+							React.createElement(
+								'fieldset',
+								{ className: 'form-group' },
+								React.createElement(
+									'label',
+									{ 'for': 'textarea' },
+									'Message'
+								),
+								React.createElement('textarea', { className: 'form-control', id: 'textarea', rows: '3', placeholder: 'Message' })
+							),
+							React.createElement(Recaptcha, {
+								sitekey: '6LcA8h8TAAAAAMf3AZfSM7aHZzCTBbg7Jx18wy8b',
+								size: 'normal',
+								render: 'explicit',
+								verifyCallback: this.verifyCallback,
+								onloadCallback: this.callback,
+								expiredCallback: this.expiredCallback
+							}),
+							React.createElement('br', null),
+							React.createElement(
+								'button',
+								{ type: 'submit', value: 'submit', className: 'btn btn-primary' },
+								'Submit'
+							)
 						)
 					)
 				)
@@ -20706,7 +20721,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 200px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.4;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black; }\n\n.downloadIcon {\n  max-width: 100px; }\n\n.download {\n  text-align: center; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n.btn-static {\n  display: inline;\n  background-color: white;\n  border: 1px solid;\n  cursor: default; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
+	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 250px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.3;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black; }\n\n.downloadIcon {\n  max-width: 100px;\n  margin-top: 80px; }\n\n.download {\n  text-align: center;\n  margin-bottom: 100px; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n.btn-static {\n  display: inline;\n  background-color: white;\n  border: 1px solid;\n  cursor: default; }\n\n.about-section {\n  margin-left: 38px;\n  margin-right: 38px;\n  margin-bottom: 5%; }\n\n.project-section {\n  margin-left: 50px; }\n\n.info-section {\n  margin-right: 50px; }\n\n.contact-section {\n  margin-left: 38px;\n  margin-right: 38px; }\n\n.square-image {\n  max-height: 150px; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
 
 	// exports
 
@@ -21032,7 +21047,7 @@
 					"location": "Malmö, Sweden",
 					"time": "48h",
 					"description": "Having been sponsored ",
-					"image": "./abc",
+					"image": "src/img/icons/Nordic.png",
 					"link": [
 						{
 							"linkName": "GitHub",
@@ -21054,7 +21069,7 @@
 					"location": "University of Michigan, Ann Arbor",
 					"time": "36h",
 					"description": "Travellers",
-					"image": "./abc",
+					"image": "src/img/icons/Mhacks.png",
 					"link": [
 						{
 							"linkName": "GitHub",
@@ -21078,7 +21093,7 @@
 					"location": "University of Pennsylvania, Philadelphia",
 					"time": "36h",
 					"description": "Shopping",
-					"image": "./abc",
+					"image": "src/img/icons/Penn.png",
 					"link": [
 						{
 							"linkName": "GitHub",
@@ -21102,7 +21117,7 @@
 					"location": "McMaster University, Hamilton",
 					"time": "24h",
 					"description": "Kids",
-					"image": "./abc",
+					"image": "src/img/icons/delta.png",
 					"link": [
 						{
 							"linkName": "GitHub",
@@ -21126,7 +21141,7 @@
 					"location": "University of Waterloo, Waterloo",
 					"time": "12h",
 					"description": "Security",
-					"image": "./abc",
+					"image": "src/img/icons/tech retreat.png",
 					"link": [
 						{
 							"linkName": "GitHub",
@@ -21157,7 +21172,7 @@
 					"projectName": "Gitalytics",
 					"description": "This website. Built completly from scratch.",
 					"builtWith": "nodejs",
-					"image": "./abc",
+					"image": "src/img/gitalytics.png",
 					"link": "lol"
 				},
 				{
