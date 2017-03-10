@@ -1,6 +1,47 @@
 {
   "projects": {
     "hackathons": [
+        {
+        "projectName": "heyKanye",
+        "hackathon": "Hack the North (2016)",
+        "location": "Waterloo, ON",
+        "time": "48h",
+        "description": "In recent time, data science has become relevant in every single field. We wanted to see how we can use it to create music. HeyKanye takes bulk lyrical data from artists of any genre and applies statistical modelling to produce structurally accurate and meaningful music lyrics. It then syncs it to beats and uses text-to-speech to drop a sick new track. It detects the parts of a track with repetitive patterns to determine beat, chorus location, etc, sync lyrics to beats, learns proper chorus-verse structure for structurally accurate songs, implements multiple rhyme schemes within songs, analyzes common word-to-word relationships to simulate meaning, analyzes common lyrical grammar to create musically relevant songs.",
+        "image": "src/img/icons/hackthenorth.png",
+        "link": [
+          {
+            "linkName": "GitHub",
+            "link": "https://github.com/ehliang/rapGen"
+          },
+          {
+            "linkName":"Twitter",
+            "link":"https://twitter.com/HackTheNorth/status/777591815469867009"
+          }
+        ],
+        "builtWith": [
+          {
+            "tech": "Python"
+          },
+          {
+            "tech": "Microsoft Azure Machine Learning Suite"
+          },
+          {
+            "tech": "SQL Server"
+          },
+          {
+            "tech": "Hidden Markov Models"
+          },
+          {
+            "tech": "libRosa"
+          },
+          {
+            "tech": "node.js"
+          },
+          {
+            "tech": "Bootstrap"
+          }
+        ]
+      },
       {
         "projectName": "dCharge",
         "hackathon": "NordicIOT Hackathon (2016)",

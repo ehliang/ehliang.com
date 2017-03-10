@@ -12,28 +12,32 @@ body {
   z-index: 202020; }
 
 .introFloatTitle {
-  font-weight: 200;
+  font-size:3em;
+  font-weight: 500;
   color: black; }
 
 .introFloatTitleLink {
-  font-weight: 200;
+  font-weight: 400;
+  font-size:2em;
   color: black;
   text-decoration: underline; }
 
 .linkBlock {
-  margin-top: 20em;
+  margin-top: 3em;
   display: inline; }
 
 .intro-block {
-  margin-top: 10%; }
+  margin-top: 15%; }
 
 .profilePic {
   max-width: 250px;
+  margin-top:2.5em;
   width: auto;
   height: auto; }
 
 .introFloatTitles {
   font-weight: 200;
+  font-size:2em;
   display: inline; }
 
 .blurBack {
@@ -57,13 +61,13 @@ body {
 
 header {
   text-align: left;
-  background: #2874EE;
-  color: white; }
+  background: white;
+  color: black; }
 
 .resume {
   text-align: left;
-  background: #2874EE;
-  color: white; }
+  background: white;
+  color: black; }
 
 .contact {
   text-align: left;
@@ -114,7 +118,7 @@ header {
   margin-right: 25px; }
 
 .info-section {
-  margin-right: 60px; }
+  margin-right: 5px; }
 
 .contact-section {
   margin-left: 48px;
@@ -132,4 +136,20 @@ header {
 .about-me-section {
   margin-bottom: 30px; }
 
+.leftAligned{
+  margin-left:35px;
+}
+
+.clickAnywhere{
+  margin-top: 4em;
+  font-size: 1.5em;
+}
+hr{
+    display: block;
+    height: 20px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
 /*# sourceMappingURL=main.css.map */

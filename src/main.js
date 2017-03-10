@@ -100,15 +100,19 @@ var About = React.createClass({
 			<header>
 		        <div className="container-fluid">
 		            <div className="row">
-		                <div className="col-xs-12">
+		                <div className="col-xs-9">
 		                		<h1> About Me</h1>
-		                		<h4 className="about-section-beginning">I'm Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.</h4>
-		                		<h4 className="about-section-middle">Current resident of the <em>Velocity Residence</em>, Canada's largest free startup incubator. Exploring entrepenurship by creating a startup to bring data analytics product Gitalytics to market.</h4>
-		                		<h4 className="about-section-middle">Loves planes, basketball, dogs, and long walks on the beach. </h4>
-		                		<h4 className="about-section-end">Currently looking for software internship opportunities.</h4>
+		                		<h4 className="about-section-beginning">I'm Ethan, a Systems Design Engineering student at the University of Waterloo. I love hackathons and side projects. Currently working with data science and machine learning.</h4>
+		                		<h4 className="about-section-middle">Researcher in the <a href="http://kimia.uwaterloo.ca">University of Waterloo KIMIA Lab</a>, Past Resident of <a href="http://velocity.uwaterloo.ca/about-us/">Velocity Startup Incubator</a>, Grand Finalist of <a href="https://hackthenorth.com">Hack the North 2016</a>.</h4>
+		                		<h4 className="about-section-middle">Dog Person. Loves reading, photography, planes, running, foosball, DIY.</h4>
+		                		<h4 className="about-section-end">Currently looking for software internship opportunities.<br/><br/> Let's Connect!</h4>
+		                </div>
+		                <div className="col-xs-2">
+		                <img className="profilePic" src="src/img/photo.png"/>
 		                </div>
 		            </div>
 		        </div>
+		        <hr/>
 		    </header>
 			);
 	}
@@ -121,17 +125,19 @@ var IntroScreen = React.createClass({
 
 			<div className="introFloat">
 			<div className="intro-block">
-				<img className="profilePic" src="src/img/profile_circle.png"/>
-				<h1 className="introFloatTitle">Hey, I'm Ethan Liang.</h1>
-				<h3 className="introFloatTitle">Developer, Designer, Entrepreneur.</h3>
+				<h1 className="introFloatTitle">Hey, I'm Ethan!</h1>
+				<h3 className="introFloatTitle">Software Engineer / Data Scientist</h3>
 				<h5 className="introFloatTitles">Check me out on </h5>
 
 				<a className="introFloatTitleLink" href="https://github.com/ehliang">GitHub</a> 
 				<h5 className="introFloatTitles"> and </h5>
 				<a className="introFloatTitleLink" href="https://www.linkedin.com/in/ehliang">LinkedIn</a>
-				. 
+				
+
+				<h5 className="clickAnywhere">Click anywhere to find out more!</h5>
 				</div>
 			</div> 
+
 
 
 			); 
@@ -266,6 +272,7 @@ var Portfolio = React.createClass({
 					</div>
 				</div>
 			</div>
+			<hr/>
 		</section> 
 
 			); 
@@ -293,14 +300,26 @@ var PortfolioSquare = React.createClass({
 var Resume = React.createClass({ 
 	render: function(){
 		return (
-			<section className="resume" id="resume"> 
+			<section className="about-me-section" id="resume"> 
 			<div className="container-fluid">
-			<h1>Resume</h1>
-			<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
-			<img className="center-block downloadIcon" src="src/img/download.png"/>
-			</a>
-				<h3 className="download">Download</h3>
+		            <div className="row">
+		                <div className="col-xs-9">
+		                		<h1>Resume</h1>
+		                		<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
+									<h3 className="about-section-beginning"> Software Engineering</h3>
+								</a>
+								<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
+									<h3 className="about-section-beginning">Data Science</h3>
+								</a>
+								<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
+									<h3 className="about-section-beginning">Project Manager</h3>
+								</a>
+		                </div>
+		    		</div>
+
 			</div>
+			<hr/>
+
 			</section> 
 
 			);

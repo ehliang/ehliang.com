@@ -187,7 +187,7 @@
 						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'col-xs-12' },
+							{ className: 'col-xs-9' },
 							React.createElement(
 								'h1',
 								null,
@@ -196,32 +196,53 @@
 							React.createElement(
 								'h4',
 								{ className: 'about-section-beginning' },
-								'I\'m Ethan, a Systems Design Engineering student at the University of Waterloo. Tech enthusiast who enjoys hackathon and side projects. Mainly focused on full-stack web and native Android development. Currently exploring data science and machine learning.'
+								'I\'m Ethan, a Systems Design Engineering student at the University of Waterloo. I love hackathons and side projects. Currently working with data science and machine learning.'
 							),
 							React.createElement(
 								'h4',
 								{ className: 'about-section-middle' },
-								'Current resident of the ',
+								'Researcher in the ',
 								React.createElement(
-									'em',
-									null,
-									'Velocity Residence'
+									'a',
+									{ href: 'http://kimia.uwaterloo.ca' },
+									'University of Waterloo KIMIA Lab'
 								),
-								', Canada\'s largest free startup incubator. Exploring entrepenurship by creating a startup to bring data analytics product Gitalytics to market.'
+								', Past Resident of ',
+								React.createElement(
+									'a',
+									{ href: 'http://velocity.uwaterloo.ca/about-us/' },
+									'Velocity Startup Incubator'
+								),
+								', Grand Finalist of ',
+								React.createElement(
+									'a',
+									{ href: 'https://hackthenorth.com' },
+									'Hack the North 2016'
+								),
+								'.'
 							),
 							React.createElement(
 								'h4',
 								{ className: 'about-section-middle' },
-								'Loves planes, basketball, dogs, and long walks on the beach. '
+								'Dog Person. Loves reading, photography, planes, running, foosball, DIY.'
 							),
 							React.createElement(
 								'h4',
 								{ className: 'about-section-end' },
-								'Currently looking for software internship opportunities.'
+								'Currently looking for software internship opportunities.',
+								React.createElement('br', null),
+								React.createElement('br', null),
+								' Let\'s Connect!'
 							)
+						),
+						React.createElement(
+							'div',
+							{ className: 'col-xs-2' },
+							React.createElement('img', { className: 'profilePic', src: 'src/img/photo.png' })
 						)
 					)
-				)
+				),
+				React.createElement('hr', null)
 			);
 		}
 	});
@@ -236,16 +257,15 @@
 				React.createElement(
 					'div',
 					{ className: 'intro-block' },
-					React.createElement('img', { className: 'profilePic', src: 'src/img/profile_circle.png' }),
 					React.createElement(
 						'h1',
 						{ className: 'introFloatTitle' },
-						'Hey, I\'m Ethan Liang.'
+						'Hey, I\'m Ethan!'
 					),
 					React.createElement(
 						'h3',
 						{ className: 'introFloatTitle' },
-						'Developer, Designer, Entrepreneur.'
+						'Software Engineer / Data Scientist'
 					),
 					React.createElement(
 						'h5',
@@ -267,7 +287,11 @@
 						{ className: 'introFloatTitleLink', href: 'https://www.linkedin.com/in/ehliang' },
 						'LinkedIn'
 					),
-					'.'
+					React.createElement(
+						'h5',
+						{ className: 'clickAnywhere' },
+						'Click anywhere to find out more!'
+					)
 				)
 			);
 		}
@@ -527,7 +551,8 @@
 							)
 						)
 					)
-				)
+				),
+				React.createElement('hr', null)
 			);
 		}
 
@@ -561,26 +586,52 @@
 		render: function () {
 			return React.createElement(
 				'section',
-				{ className: 'resume', id: 'resume' },
+				{ className: 'about-me-section', id: 'resume' },
 				React.createElement(
 					'div',
 					{ className: 'container-fluid' },
 					React.createElement(
-						'h1',
-						null,
-						'Resume'
-					),
-					React.createElement(
-						'a',
-						{ href: 'https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf' },
-						React.createElement('img', { className: 'center-block downloadIcon', src: 'src/img/download.png' })
-					),
-					React.createElement(
-						'h3',
-						{ className: 'download' },
-						'Download'
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-xs-9' },
+							React.createElement(
+								'h1',
+								null,
+								'Resume'
+							),
+							React.createElement(
+								'a',
+								{ href: 'https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf' },
+								React.createElement(
+									'h3',
+									{ className: 'about-section-beginning' },
+									' Software Engineering'
+								)
+							),
+							React.createElement(
+								'a',
+								{ href: 'https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf' },
+								React.createElement(
+									'h3',
+									{ className: 'about-section-beginning' },
+									'Data Science'
+								)
+							),
+							React.createElement(
+								'a',
+								{ href: 'https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf' },
+								React.createElement(
+									'h3',
+									{ className: 'about-section-beginning' },
+									'Project Manager'
+								)
+							)
+						)
 					)
-				)
+				),
+				React.createElement('hr', null)
 			);
 		}
 
@@ -20786,7 +20837,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-weight: 200;\n  color: black; }\n\n.introFloatTitleLink {\n  font-weight: 200;\n  color: black;\n  text-decoration: underline; }\n\n.linkBlock {\n  margin-top: 20em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 10%; }\n\n.profilePic {\n  max-width: 250px;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.3;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.resume {\n  text-align: left;\n  background: #2874EE;\n  color: white; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black;\n  margin-bottom: 50px; }\n\n.downloadIcon {\n  max-width: 100px;\n  margin-top: 50px; }\n\n.download {\n  text-align: center;\n  margin-bottom: 70px; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n.btn-static {\n  display: inline;\n  background-color: white;\n  border: 1px solid;\n  cursor: default; }\n\n.about-section-beginning {\n  margin-left: 48px;\n  margin-right: 48px;\n  margin-top: 3%; }\n\n.about-section-middle {\n  margin-left: 48px;\n  margin-right: 48px;\n  margin-bottom: 2%; }\n\n.about-section-end {\n  margin-left: 48px;\n  margin-right: 38px;\n  margin-bottom: 5%; }\n\n.project-section {\n  margin-left: 60px;\n  margin-right: 25px; }\n\n.info-section {\n  margin-right: 60px; }\n\n.contact-section {\n  margin-left: 48px;\n  margin-right: 48px; }\n\n.square-image {\n  max-height: 125px; }\n\n.nav-link {\n  font-size: 20px; }\n\n.navbar-brand {\n  font-size: 20px; }\n\n.about-me-section {\n  margin-bottom: 30px; }\n\n/*# sourceMappingURL=main.css.map */\n", ""]);
+	exports.push([module.id, "body {\n  background-color: white;\n  font-family: 'Raleway', sans-serif; }\n\n.introFloat {\n  position: fixed;\n  text-align: center;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 202020; }\n\n.introFloatTitle {\n  font-size:3em;\n  font-weight: 500;\n  color: black; }\n\n.introFloatTitleLink {\n  font-weight: 400;\n  font-size:2em;\n  color: black;\n  text-decoration: underline; }\n\n.linkBlock {\n  margin-top: 3em;\n  display: inline; }\n\n.intro-block {\n  margin-top: 15%; }\n\n.profilePic {\n  max-width: 250px;\n  margin-top:2.5em;\n  width: auto;\n  height: auto; }\n\n.introFloatTitles {\n  font-weight: 200;\n  font-size:2em;\n  display: inline; }\n\n.blurBack {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0.3;\n  z-index: 1010;\n  -webkit-filter: blur(5px);\n  -moz-filter: blur(5px);\n  -o-filter: blur(5px);\n  -ms-filter: blur(5px);\n  filter: blur(5px); }\n\n.abcd {\n  margin-top: 200px;\n  text-align: center;\n  z-index: 1; }\n\nheader {\n  text-align: left;\n  background: white;\n  color: black; }\n\n.resume {\n  text-align: left;\n  background: white;\n  color: black; }\n\n.contact {\n  text-align: left;\n  background: white;\n  color: black;\n  margin-bottom: 50px; }\n\n.downloadIcon {\n  max-width: 100px;\n  margin-top: 50px; }\n\n.download {\n  text-align: center;\n  margin-bottom: 70px; }\n\n.panel-default:hover {\n  background-color: #2874EE;\n  color: white; }\n\n.portfolio-square {\n  text-align: center;\n  cursor: pointer;\n  cursor: hand; }\n\n.btn-static {\n  display: inline;\n  background-color: white;\n  border: 1px solid;\n  cursor: default; }\n\n.about-section-beginning {\n  margin-left: 48px;\n  margin-right: 48px;\n  margin-top: 3%; }\n\n.about-section-middle {\n  margin-left: 48px;\n  margin-right: 48px;\n  margin-bottom: 2%; }\n\n.about-section-end {\n  margin-left: 48px;\n  margin-right: 38px;\n  margin-bottom: 5%; }\n\n.project-section {\n  margin-left: 60px;\n  margin-right: 25px; }\n\n.info-section {\n  margin-right: 5px; }\n\n.contact-section {\n  margin-left: 48px;\n  margin-right: 48px; }\n\n.square-image {\n  max-height: 125px; }\n\n.nav-link {\n  font-size: 20px; }\n\n.navbar-brand {\n  font-size: 20px; }\n\n.about-me-section {\n  margin-bottom: 30px; }\n\n.leftAligned{\n  margin-left:35px;\n}\n\n.clickAnywhere{\n  margin-top: 4em;\n  font-size: 1.5em;\n}\nhr{\n    display: block;\n    height: 20px;\n    border: 0;\n    border-top: 1px solid #ccc;\n    margin: 1em 0;\n    padding: 0;\n}\n/*# sourceMappingURL=main.css.map */\n", ""]);
 
 	// exports
 
@@ -21106,6 +21157,47 @@
 	module.exports = {
 		"projects": {
 			"hackathons": [
+				{
+					"projectName": "heyKanye",
+					"hackathon": "Hack the North (2016)",
+					"location": "Waterloo, ON",
+					"time": "48h",
+					"description": "In recent time, data science has become relevant in every single field. We wanted to see how we can use it to create music. HeyKanye takes bulk lyrical data from artists of any genre and applies statistical modelling to produce structurally accurate and meaningful music lyrics. It then syncs it to beats and uses text-to-speech to drop a sick new track. It detects the parts of a track with repetitive patterns to determine beat, chorus location, etc, sync lyrics to beats, learns proper chorus-verse structure for structurally accurate songs, implements multiple rhyme schemes within songs, analyzes common word-to-word relationships to simulate meaning, analyzes common lyrical grammar to create musically relevant songs.",
+					"image": "src/img/icons/hackthenorth.png",
+					"link": [
+						{
+							"linkName": "GitHub",
+							"link": "https://github.com/ehliang/rapGen"
+						},
+						{
+							"linkName": "Twitter",
+							"link": "https://twitter.com/HackTheNorth/status/777591815469867009"
+						}
+					],
+					"builtWith": [
+						{
+							"tech": "Python"
+						},
+						{
+							"tech": "Microsoft Azure Machine Learning Suite"
+						},
+						{
+							"tech": "SQL Server"
+						},
+						{
+							"tech": "Hidden Markov Models"
+						},
+						{
+							"tech": "libRosa"
+						},
+						{
+							"tech": "node.js"
+						},
+						{
+							"tech": "Bootstrap"
+						}
+					]
+				},
 				{
 					"projectName": "dCharge",
 					"hackathon": "NordicIOT Hackathon (2016)",
