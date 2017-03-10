@@ -305,13 +305,13 @@ var Resume = React.createClass({
 		            <div className="row">
 		                <div className="col-xs-9">
 		                		<h1>Resume</h1>
-		                		<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
+		                		<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/ResumeSE.pdf">
 									<h3 className="about-section-beginning"> Software Engineering</h3>
 								</a>
-								<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
+								<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/ResumeDS.pdf">
 									<h3 className="about-section-beginning">Data Science</h3>
 								</a>
-								<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
+								<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/ResumePM.pdf">
 									<h3 className="about-section-beginning">Project Manager</h3>
 								</a>
 		                </div>
