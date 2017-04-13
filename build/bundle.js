@@ -603,29 +603,11 @@
 							),
 							React.createElement(
 								'a',
-								{ href: 'https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/ResumeSE.pdf' },
+								{ href: 'https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf' },
 								React.createElement(
 									'h3',
 									{ className: 'about-section-beginning' },
-									' Software Engineering'
-								)
-							),
-							React.createElement(
-								'a',
-								{ href: 'https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/ResumeDS.pdf' },
-								React.createElement(
-									'h3',
-									{ className: 'about-section-beginning' },
-									'Data Science'
-								)
-							),
-							React.createElement(
-								'a',
-								{ href: 'https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/ResumePM.pdf' },
-								React.createElement(
-									'h3',
-									{ className: 'about-section-beginning' },
-									'Project Manager'
+									'Software Engineering'
 								)
 							)
 						)
