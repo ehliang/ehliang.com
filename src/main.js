@@ -306,7 +306,7 @@ var Resume = React.createClass({
 		                <div className="col-xs-9">
 		                		<h1>Resume</h1>
 		                		<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
-									<h3 className="about-section-beginning">Software Engineering/Data Science</h3>
+									<h3 className="about-section-beginning">Software Engineering</h3>
 								</a>
 		                </div>
 		    		</div>
