@@ -90,12 +90,64 @@
 				React.createElement(Navbar, null),
 				React.createElement(About, null),
 				React.createElement(Portfolio, null),
-				React.createElement(Resume, null),
 				React.createElement(Contact, null)
 			);
 		}
 
 	});
+
+	// var Content = React.createClass({
+	// 	render:function(){
+	// 		return (
+	// 		<div>
+
+	// 	<Navbar/>
+
+	// 	<About/>
+
+	//     <Portfolio/>
+
+	//     <Resume/>
+
+	//     <Contact/>
+
+	//     </div>
+
+	// 			);
+	// 	}
+
+	// });
+
+	// var Navbar = React.createClass({
+
+	// 	render: function(){
+	// 		return(
+	// 		<nav className="navbar navbar-default">
+	// 		  <a className="navbar-brand" href="#">Ethan Liang</a>
+	// 		  <ul className="nav navbar-nav">
+	// 		    <li className="nav-item">
+	// 		      <a className="nav-link" href="#about">About Me</a>
+	// 		    </li>
+	// 		    <li className="nav-item">
+	// 		      <a className="nav-link" href="#projects">Projects</a>
+	// 		    </li>
+	// 		    <li className="nav-item">
+	// 		      <a className="nav-link" href="#resume">Resume</a>
+	// 		    </li>
+	// 		    <li className="nav-item">
+	// 		      <a className="nav-link" href="#contact">Contact Me</a>
+	// 		    </li>
+	// 		   	<li className="nav-item">
+	// 		      <a className="nav-link" href="https://github.com/ehliang">GitHub</a>
+	// 		    </li>
+	// 		   	<li className="nav-item">
+	// 		      <a className="nav-link" href="https://www.linkedin.com/in/ehliang">LinkedIn</a>
+	// 		    </li>
+	// 		  </ul>
+	// 		</nav>
+	// 		);
+	// 	}
+	// });
 
 	var Navbar = React.createClass({
 		displayName: 'Navbar',
@@ -129,15 +181,6 @@
 							'a',
 							{ className: 'nav-link', href: '#projects' },
 							'Projects'
-						)
-					),
-					React.createElement(
-						'li',
-						{ className: 'nav-item' },
-						React.createElement(
-							'a',
-							{ className: 'nav-link', href: '#resume' },
-							'Resume'
 						)
 					),
 					React.createElement(
@@ -224,7 +267,7 @@
 							React.createElement(
 								'h4',
 								{ className: 'about-section-middle' },
-								'Dog Person. Loves reading, photography, planes, running, foosball, DIY.'
+								'Loves football, entreprenurship, MMA, planes, DIY.'
 							),
 							React.createElement(
 								'h4',
@@ -271,6 +314,16 @@
 						'h5',
 						{ className: 'introFloatTitles' },
 						'Check me out on '
+					),
+					React.createElement(
+						'a',
+						{ className: 'introFloatTitleLink', href: 'https://devpost.com/ehliang' },
+						'Devpost'
+					),
+					React.createElement(
+						'h5',
+						{ className: 'introFloatTitles' },
+						', '
 					),
 					React.createElement(
 						'a',
@@ -580,44 +633,29 @@
 
 	});
 
-	var Resume = React.createClass({
-		displayName: 'Resume',
+	// var Resume = React.createClass({
+	// 	render: function(){
+	// 		return (
+	// 			<section className="about-me-section" id="resume">
+	// 			<div className="container-fluid">
+	// 		            <div className="row">
+	// 		                <div className="col-xs-9">
+	// 		                		<h1>Resume</h1>
+	// 		                		<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
+	// 									<h3 className="about-section-beginning">Software Engineering</h3>
+	// 								</a>
+	// 		                </div>
+	// 		    		</div>
 
-		render: function () {
-			return React.createElement(
-				'section',
-				{ className: 'about-me-section', id: 'resume' },
-				React.createElement(
-					'div',
-					{ className: 'container-fluid' },
-					React.createElement(
-						'div',
-						{ className: 'row' },
-						React.createElement(
-							'div',
-							{ className: 'col-xs-9' },
-							React.createElement(
-								'h1',
-								null,
-								'Resume'
-							),
-							React.createElement(
-								'a',
-								{ href: 'https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf' },
-								React.createElement(
-									'h3',
-									{ className: 'about-section-beginning' },
-									'Software Engineering'
-								)
-							)
-						)
-					)
-				),
-				React.createElement('hr', null)
-			);
-		}
+	// 			</div>
+	// 			<hr/>
 
-	});
+	// 			</section>
+
+	// 			);
+	// 	}
+
+	// });
 
 	var Contact = React.createClass({
 		displayName: 'Contact',
