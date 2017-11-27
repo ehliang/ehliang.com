@@ -51,8 +51,6 @@ var Content = React.createClass({
 
     <Portfolio/> 
 
-    <Resume/>
-
     <Contact/>
 
     </div>
@@ -62,6 +60,61 @@ var Content = React.createClass({
 	}
 
 });
+
+
+// var Content = React.createClass({
+// 	render:function(){
+// 		return (
+// 		<div>
+
+// 	<Navbar/>
+
+// 	<About/>
+
+//     <Portfolio/> 
+
+//     <Resume/>
+
+//     <Contact/>
+
+//     </div>
+
+
+// 			);
+// 	}
+
+// });
+
+// var Navbar = React.createClass({
+
+// 	render: function(){
+// 		return(
+// 		<nav className="navbar navbar-default">
+// 		  <a className="navbar-brand" href="#">Ethan Liang</a>
+// 		  <ul className="nav navbar-nav">
+// 		    <li className="nav-item">
+// 		      <a className="nav-link" href="#about">About Me</a>
+// 		    </li>
+// 		    <li className="nav-item">
+// 		      <a className="nav-link" href="#projects">Projects</a>
+// 		    </li>
+// 		    <li className="nav-item">
+// 		      <a className="nav-link" href="#resume">Resume</a>
+// 		    </li>
+// 		    <li className="nav-item">
+// 		      <a className="nav-link" href="#contact">Contact Me</a>
+// 		    </li>
+// 		   	<li className="nav-item">
+// 		      <a className="nav-link" href="https://github.com/ehliang">GitHub</a>
+// 		    </li>
+// 		   	<li className="nav-item">
+// 		      <a className="nav-link" href="https://www.linkedin.com/in/ehliang">LinkedIn</a>
+// 		    </li>
+// 		  </ul>
+// 		</nav>
+// 		);
+// 	}
+// });
 
 var Navbar = React.createClass({
 
@@ -75,9 +128,6 @@ var Navbar = React.createClass({
 		    </li>
 		    <li className="nav-item">
 		      <a className="nav-link" href="#projects">Projects</a>
-		    </li>
-		    <li className="nav-item">
-		      <a className="nav-link" href="#resume">Resume</a>
 		    </li>
 		    <li className="nav-item">
 		      <a className="nav-link" href="#contact">Contact Me</a>
@@ -104,7 +154,7 @@ var About = React.createClass({
 		                		<h1> About Me</h1>
 		                		<h4 className="about-section-beginning">I'm Ethan, a Systems Design Engineering student at the University of Waterloo. I love hackathons and side projects. Currently working with data science and machine learning.</h4>
 		                		<h4 className="about-section-middle">Researcher in the <a href="http://kimia.uwaterloo.ca">University of Waterloo KIMIA Lab</a>, Past Resident of <a href="http://velocity.uwaterloo.ca/about-us/">Velocity Startup Incubator</a>, Grand Finalist of <a href="https://hackthenorth.com">Hack the North 2016</a>.</h4>
-		                		<h4 className="about-section-middle">Dog Person. Loves reading, photography, planes, running, foosball, DIY.</h4>
+		                		<h4 className="about-section-middle">Loves football, entreprenurship, MMA, planes, DIY.</h4>
 		                		<h4 className="about-section-end">Currently looking for software internship opportunities.<br/><br/> Let's Connect!</h4>
 		                </div>
 		                <div className="col-xs-2">
@@ -129,8 +179,13 @@ var IntroScreen = React.createClass({
 				<h3 className="introFloatTitle">Software Engineer / Data Scientist</h3>
 				<h5 className="introFloatTitles">Check me out on </h5>
 
+				<a className="introFloatTitleLink" href="https://devpost.com/ehliang">Devpost</a> 
+				<h5 className="introFloatTitles">, </h5>
+
 				<a className="introFloatTitleLink" href="https://github.com/ehliang">GitHub</a> 
 				<h5 className="introFloatTitles"> and </h5>
+
+
 				<a className="introFloatTitleLink" href="https://www.linkedin.com/in/ehliang">LinkedIn</a>
 				
 
@@ -297,29 +352,29 @@ var PortfolioSquare = React.createClass({
 
 });
 
-var Resume = React.createClass({ 
-	render: function(){
-		return (
-			<section className="about-me-section" id="resume"> 
-			<div className="container-fluid">
-		            <div className="row">
-		                <div className="col-xs-9">
-		                		<h1>Resume</h1>
-		                		<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
-									<h3 className="about-section-beginning">Software Engineering</h3>
-								</a>
-		                </div>
-		    		</div>
+// var Resume = React.createClass({ 
+// 	render: function(){
+// 		return (
+// 			<section className="about-me-section" id="resume"> 
+// 			<div className="container-fluid">
+// 		            <div className="row">
+// 		                <div className="col-xs-9">
+// 		                		<h1>Resume</h1>
+// 		                		<a href="https://docs.google.com/viewer?url=https://github.com/ehliang/resume/raw/master/Resume.pdf">
+// 									<h3 className="about-section-beginning">Software Engineering</h3>
+// 								</a>
+// 		                </div>
+// 		    		</div>
 
-			</div>
-			<hr/>
+// 			</div>
+// 			<hr/>
 
-			</section> 
+// 			</section> 
 
-			);
-	}
+// 			);
+// 	}
 
-});
+// });
 
 
 var Contact = React.createClass({
